@@ -67,9 +67,11 @@ function addStar() {
 
 Array(200).fill().forEach(addStar);
 
-// Background image
-const spaceTexture = new THREE.TextureLoader().load('space.jpg');
-scene.background = spaceTexture;
+// Background
+//const bgTexture = new THREE.TextureLoader().load('space.jpg');
+scene.background = new THREE.Color( 0x431a38 );
+
+// Avatar Box //
 
 // Avatar Box Image
 const avatarTexture = new THREE.TextureLoader().load('avatar.png');
@@ -79,8 +81,11 @@ const avatarBox = new THREE.Mesh(
     new THREE.MeshBasicMaterial({map: avatarTexture})
 );
 scene.add(avatarBox);
+avatarBox.position.z = 23;
+avatarBox.position.x = 4;
 
-// Moon
+// Moon //
+
 const moonTexture = new THREE.TextureLoader().load('moon.jpg');
 const normalTexture = new THREE.TextureLoader().load('normal.jpg');
 const moon = new THREE.Mesh(
@@ -90,7 +95,7 @@ const moon = new THREE.Mesh(
 scene.add(moon);
 
 // Moon Position
-moon.position.z = 30;
+moon.position.z = 28;
 moon.position.setX(-10);
 
 // Scroll animation
