@@ -1,28 +1,68 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
+<head>
     <meta charset="UTF-8" />
     <link rel="icon" type="image/svg+xml" href="favicon.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Ana's Website</title>
+    <title>Ana's Portfolio Website</title>
+
+    <!--Imports Three.js-->
+    <script type="importmap">
+    {
+        "imports": {
+          "three": "./build/three.module.js",
+          "three/examples/jsm/controls/OrbitControls":"./jsm/controls/OrbitControls.js"
+        }
+    }
+    </script>
   </head>
+
   <body>
+
+    <!--Infinite Scrool Loop-->
+    <div class="main-container">
+      <div class="scroll-container">
+        <div class="scroll-elements">
+        </div>
+      </div>
+
+      <div class="scroll-display">
+        <div class="display"></div>
+      </div>
+
+    </div>
+
 
     <!--Three.js Background-->
     <canvas id="bg"></canvas> 
-   
+
     <main>
+
+      <!--Top Bar-->
+      <div class="topnav">
+        <div class="homebutton">
+          <a href="#home"><img src="pixelicon.png" alt="Home Image"></a>
+        </div>
+        <ul>
+          <li><a href="#contact">Contact</a></li>
+          <li><a href="#works">Works</a></li>
+          <li><a href="#about">About</a></li>
+        </ul>
+      </div>
 
       <header>
         <h1>Anastasia D. Green</h1>
-        <p>Game Developer | XR Designer | 3D Artist</p>
+        <p>Game Designer | Creative Technologist</p>
         <p>🚀 My portfolio website!</p>
       </header>
-
 
       <blockquote>
         <p>I like to build stuff. Hopefully you'll see it someday</p>
       </blockquote>
+
+     
+
+      <scroll-text>Scroll!</scroll-text>
 
       
       <section>
@@ -32,7 +72,11 @@
         </p>
 
         <p>
-          I'm a 24 year old game developer, extended reality designer, and 3D artist! I am currently living in Brooklyn, New York, and have recently completed my MS in Integrated Design & Media, at NYU Tandon. Before that, I graduated from TCNJ, where I majored in Interactive Multimedia with a minor in Women, Gender, & Sexuality Studies. I enjoy programming and creating art, and have been playing, studying, and creating games for years!
+          I'm a 24 year old game developer, extended reality designer, and 3D artist! I am currently based in Brooklyn, New York, and love designing projects that sit at the intersecion of the creative and the technical. 
+        </p>
+        
+        <p>
+          I have recently completed my MS in Integrated Design & Media, at NYU Tandon. Before that, I graduated from TCNJ, where I majored in Interactive Multimedia with a minor in Women, Gender, & Sexuality Studies. I enjoy programming and creating art, and have been playing, studying, and creating games for years!
         </p>
 
         <p>
@@ -40,11 +84,46 @@
         </p>
 
         <p>
-          <button class="btn"><i class="fa fa-download"></i> Resume</button>
+          <button class="btn">Resume</button>
         </p>
         <br>
 
       
+      </section>
+
+      <section>
+        <h1>Skills</h1>
+
+        <h3>Languages</h3>
+        <ul>
+          <li>C/C++</li>
+          <li>C#</li>
+          <li>Javascript</li>
+          <li>Python</li>
+          <li>Lua</li>
+          <li>HTML/CSS</li>
+        </ul> 
+
+        <h3>Tools</h3>
+        <ul>
+          <li>C/C++</li>
+          <li>C#</li>
+          <li>Javascript</li>
+          <li>Python</li>
+          <li>Lua</li>
+          <li>HTML/CSS</li>
+        </ul> 
+
+        <h3>Fields</h3>
+        <ul>
+          <li>Game Design & Development</li>
+          <li>VR/AR/XR Design</li>
+          <li>Virtual Environment Design</li>
+          <li>Scripting/Programming</li>
+          <li>Narrative Design</li>
+          <li>Digital Illustration</li>
+        </ul> 
+
       </section>
 
       <blockquote>
