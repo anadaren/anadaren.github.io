@@ -2,46 +2,13 @@ import './style.css';
 import * as THREE from 'three';
 import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls';
 
-const homeButton = document.getElementById("homebutton");
-homeButton.addEventListener("click", returnHome);
-
-const aboutButton = document.getElementById("navButton1");
-aboutButton.addEventListener("click", aboutCamera);
-
-const worksButton = document.getElementById("navButton2");
-worksButton.addEventListener("click", myFunction); 
-
-const contactButton = document.getElementById("navButton3");
-contactButton.addEventListener("click", contactCamera); 
-
-// Resets layout
-function returnHome() {
-  window.scrollTo(0, 0);
-  var x = document.getElementById("mainDIV");
-  var y = document.getElementById("mainDIV2");
-    x.style.display = "block";
-    y.style.display = "none";
-
-}
-
-function myFunction() {
-  var x = document.getElementById("mainDIV");
-  var y = document.getElementById("mainDIV2");
-  if (x.style.display === "none" && y.style.display === "block") {
-    x.style.display = "block";
-    y.style.display = "none";
-  } else {
-    x.style.display = "none";
-    y.style.display = "block";
-  }
-}
 // // Setup // //
 
 // Scene
 const scene = new THREE.Scene();
 
-// Auto Orbit
-const autoOrbit = false;
+// If Work Page is active or not
+var workPage = false;
 
 // Camera
 const camera = new THREE.PerspectiveCamera(75, window.innerWidth/window.innerHeight, 0.1, 1000);
@@ -59,6 +26,92 @@ camera.position.setY(0);
 
 // Render = Draw
 renderer.render(scene, camera);
+
+
+// // Button Interaction // //
+
+// Recieving Button Information from HTML file via EventListeners
+const homeButton = document.getElementById("homebutton");
+homeButton.addEventListener("click", returnHome);
+
+const aboutButton = document.getElementById("navButton1");
+aboutButton.addEventListener("click", aboutCamera);
+
+const worksButton = document.getElementById("navButton2");
+worksButton.addEventListener("click", toggleWork); 
+
+const contactButton = document.getElementById("navButton3");
+contactButton.addEventListener("click", contactCamera); 
+
+// Resets layout //
+function returnHome() {
+  window.scrollTo(0, 0);
+  var x = document.getElementById("mainDIV");
+  var y = document.getElementById("mainDIV2");
+    x.style.display = "block";
+    y.style.display = "none";
+    workPage = false;
+
+    camera.position.x = 0;
+    camera.position.y = 0;
+    camera.position.z = 0;
+
+}
+
+// About Camera Position //
+function aboutCamera() {
+  window.scrollTo(0, 0);
+  var x = document.getElementById("mainDIV");
+  var y = document.getElementById("mainDIV2");
+    x.style.display = "block";
+    y.style.display = "none";
+    workPage = false;
+
+    camera.position.x = 0;
+    camera.position.y = 0;
+    camera.position.z = 0;
+ 
+}
+
+// Toggles visibility of Works //
+function toggleWork() {
+  var x = document.getElementById("mainDIV");
+  var y = document.getElementById("mainDIV2");
+  if (x.style.display === "none" && y.style.display === "block") {
+    x.style.display = "block";
+    y.style.display = "none";
+    workPage = false;
+    returnHome();
+  } else {
+    x.style.display = "none";
+    y.style.display = "block";
+    workPage = true;
+    worksPageCamera();
+  }
+
+}
+
+// Works Page Camera Position //
+function worksPageCamera() {
+  camera.position.x = 0;
+  camera.position.y = 125;
+  camera.position.z = 0;
+}
+
+// Contact Camera Position //
+function contactCamera() {
+  var x = document.getElementById("mainDIV");
+  var y = document.getElementById("mainDIV2");
+    x.style.display = "block";
+    y.style.display = "none";
+  workPage = false;
+
+  camera.position.x = 0;
+  camera.position.y = 0;
+  camera.position.z = 0;
+  window.scrollTo(0, 6000);
+}
+
 
 // // Objects // //
 
@@ -236,6 +289,7 @@ scene.add(proj1Box,proj2Box,proj3Box);
 // Scroll animation
 function moveCamera() {
 
+  if(!workPage){
   const t = document.body.getBoundingClientRect().top;
 
   // Moves Camera while scrolling
@@ -245,7 +299,7 @@ function moveCamera() {
   
 
   // Position on Orbit //
-  if(!autoOrbit){orbitPath.rotation.z = t * 0.001;}
+  if(!workPage){orbitPath.rotation.z = t * 0.001;}
 
   
 
@@ -257,38 +311,12 @@ function moveCamera() {
   avatarBox.rotation.y += 0.01;
   avatarBox.rotation.z += 0.01;
 
-  
+  }
 
 }
 document.body.onscroll = moveCamera;
 
-// // Different Camera Viewpoints // //
 
-// About Camera //
-function aboutCamera() {
-  document.getElementById("mainDIV2").style.display = "none";
-  window.scrollTo(0, 0);
-  /*camera.position.x = 0;
-  camera.position.y = 0;
-  camera.position.z = 0;*/
-}
-
-function worksPageCamera() {
-  camera.position.x = 0;
-  camera.position.y = 0;
-  camera.position.z = 0;
-
-  autoOrbit = true;
-}
-
-// Contact Camera //
-function contactCamera() {
-  document.getElementById("mainDIV2").style.display = "none";
-  window.scrollTo(0, 6000);
-  camera.position.x = 0;
-  camera.position.y = 0;
-  camera.position.z = 0;
-}
 
 
 
@@ -304,7 +332,7 @@ function animate() {
     torusObject.rotation.y += 0.005;
     torusObject.rotation.z += 0.01;
 
-    if(autoOrbit){orbitPath.rotation.z += 0.001;}
+    if(workPage){orbitPath.rotation.z += 0.001;}
 
     controls.update();
 
