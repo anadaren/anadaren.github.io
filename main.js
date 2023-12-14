@@ -2,6 +2,39 @@ import './style.css';
 import * as THREE from 'three';
 import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls';
 
+const homeButton = document.getElementById("homebutton");
+homeButton.addEventListener("click", returnHome);
+
+const aboutButton = document.getElementById("navButton1");
+aboutButton.addEventListener("click", aboutCamera);
+
+const worksButton = document.getElementById("navButton2");
+worksButton.addEventListener("click", myFunction); 
+
+const contactButton = document.getElementById("navButton3");
+contactButton.addEventListener("click", contactCamera); 
+
+// Resets layout
+function returnHome() {
+  window.scrollTo(0, 0);
+  var x = document.getElementById("mainDIV");
+  var y = document.getElementById("mainDIV2");
+    x.style.display = "block";
+    y.style.display = "none";
+
+}
+
+function myFunction() {
+  var x = document.getElementById("mainDIV");
+  var y = document.getElementById("mainDIV2");
+  if (x.style.display === "none" && y.style.display === "block") {
+    x.style.display = "block";
+    y.style.display = "none";
+  } else {
+    x.style.display = "none";
+    y.style.display = "block";
+  }
+}
 // // Setup // //
 
 // Scene
@@ -45,8 +78,9 @@ const material = new THREE.MeshStandardMaterial({color:0x555555});
 const centerObject = new THREE.Mesh(geometry, material);
 
 // Sets position
-centerObject.position.x = 10;
-centerObject.position.z = -20;
+centerObject.position.x = 7;
+centerObject.position.y = -5;
+centerObject.position.z = -15;
 
 // Adds it to the scene
 scene.add(centerObject);
@@ -112,17 +146,24 @@ scene.background = new THREE.TextureLoader().load('spaceblue.png');
 
 
 // Content Panel //
-
-
 const proj1 = new THREE.Mesh(
   new THREE.BoxGeometry(7,5,.1),
   new THREE.MeshBasicMaterial({color:0x222222})
 );
 scene.add(proj1);
 
-proj1.position.z = 23;
+proj1.position.z = 25;
 proj1.position.x = -5;
 
+
+const proj2 = new THREE.Mesh(
+  new THREE.BoxGeometry(7,5,.1),
+  new THREE.MeshBasicMaterial({color:0x222222})
+);
+scene.add(proj2);
+
+proj2.position.z = 35;
+proj2.position.x = 5;
 
 // Avatar Box //
 
@@ -198,9 +239,9 @@ function moveCamera() {
   const t = document.body.getBoundingClientRect().top;
 
   // Moves Camera while scrolling
-  /*camera.position.z = t * -0.01;
+  camera.position.z = t * -0.01;
   camera.position.x = t * -0.0002;
-  camera.position.y = t * -0.0002;*/
+  camera.position.y = t * -0.0002;
   
 
   // Position on Orbit //
@@ -225,9 +266,11 @@ document.body.onscroll = moveCamera;
 
 // About Camera //
 function aboutCamera() {
-  camera.position.x = 0;
+  document.getElementById("mainDIV2").style.display = "none";
+  window.scrollTo(0, 0);
+  /*camera.position.x = 0;
   camera.position.y = 0;
-  camera.position.z = 0;
+  camera.position.z = 0;*/
 }
 
 function worksPageCamera() {
@@ -237,6 +280,17 @@ function worksPageCamera() {
 
   autoOrbit = true;
 }
+
+// Contact Camera //
+function contactCamera() {
+  document.getElementById("mainDIV2").style.display = "none";
+  window.scrollTo(0, 6000);
+  camera.position.x = 0;
+  camera.position.y = 0;
+  camera.position.z = 0;
+}
+
+
 
 
 

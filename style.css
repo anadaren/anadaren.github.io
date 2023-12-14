@@ -43,21 +43,23 @@ h1, h2, h3, blockquote {
 }
 
 header {
-  grid-column: 2 / span 5;
   background: var(--dark-bg);
   font-size: 2.5rem;
   padding: 2rem;
   margin-top: 5rem;
-  margin-bottom: var(--spacing);
+  margin-left: 1rem;
+  margin-right: 50rem;
+  margin-bottom: 25rem;
 }
 
 section {
-  grid-column: 2 / 8;
+  border-radius: 25px;
   background: var(--dark-bg);
   font-size: 1.25rem;
   padding: 1rem;
   line-height: 1.5;
-  margin-bottom: var(--spacing);
+  margin-bottom: 50rem;
+  z-index: -1;
 }
 
 blockquote {
@@ -65,7 +67,7 @@ blockquote {
   margin: 0;
   padding: 0;
   font-size: 1.25rem;
-  margin-bottom: var(--spacing);
+  margin-bottom: 50rem;
 }
 
 blockquote p {
@@ -102,8 +104,9 @@ button {
   background-color: black;
   /*border: none;*/
   color: white;
+  border-radius: 5px;
   padding: 12px 25px;
-  margin-top: 20px;
+  margin-top: -75px;
   position: fixed;
   cursor: pointer;
   font-size: 1.5rem;
@@ -120,6 +123,7 @@ button:hover {
   width: 75px;
   height: 75px;
   margin: 10px 50px;
+  cursor: pointer;
 
 }
 
@@ -155,7 +159,7 @@ button:hover {
   margin-left: 75px;
   margin-right: 75px;
   z-index: -1;
-  
+
   animation: fadeIn 1s linear forwards;
 }
 
@@ -181,12 +185,11 @@ button:hover {
 }
 
 scroll-text {
-  left: 50%;
-  grid-column: 6 / span 1;
-  margin: 0;
-  padding: 0;
+  position:absolute;
+  left: 45%;
+  margin-bottom: 0rem;
+  padding: 0rem;
   font-size: 4rem;
-  margin-bottom: var(--spacing);
 }
 
 .projectImage {
