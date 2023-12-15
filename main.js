@@ -7,6 +7,9 @@ import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls';
 // Scene
 const scene = new THREE.Scene();
 
+// Clock
+const clock = new THREE.Clock();
+
 // If Work Page is active or not
 var workPage = false;
 
@@ -20,12 +23,28 @@ const renderer = new THREE.WebGLRenderer({
 
 renderer.setPixelRatio(window.devicePixelRatio);
 renderer.setSize(window.innerWidth, window.innerHeight);
-camera.position.setZ(30);
-camera.position.setX(-30);
-camera.position.setY(0);
+camera.position.set(-80,0,0);
 
 // Render = Draw
 renderer.render(scene, camera);
+
+// // Lights // //
+
+//Creates some lights and adds them to the scene
+const pointLight = new THREE.PointLight(0xffffff);
+pointLight.position.set(5,5,5);
+
+const ambientLight = new THREE.AmbientLight(0xffffff);
+
+scene.add(pointLight, ambientLight);
+
+// Orbit controls
+const controls = new OrbitControls(camera, renderer.domElement);
+
+// Background Image
+const bgTexture = new THREE.TextureLoader().load('spaceblue.png');
+//scene.background = new THREE.Color( 0x000000 );
+scene.background = new THREE.TextureLoader().load('spaceblue.png');
 
 
 // // Button Interaction // //
@@ -43,7 +62,7 @@ worksButton.addEventListener("click", toggleWork);
 const contactButton = document.getElementById("navButton3");
 contactButton.addEventListener("click", contactCamera); 
 
-// Resets layout //
+// Resets layout on Home Button //
 function returnHome() {
   window.scrollTo(0, 0);
   var x = document.getElementById("mainDIV");
@@ -52,9 +71,7 @@ function returnHome() {
     y.style.display = "none";
     workPage = false;
 
-    camera.position.x = 0;
-    camera.position.y = 0;
-    camera.position.z = 0;
+    camera.position.set(-80,0,0);
 
 }
 
@@ -67,13 +84,14 @@ function aboutCamera() {
     y.style.display = "none";
     workPage = false;
 
+    camera.lookAt( centerObject.position );
     camera.position.x = 0;
     camera.position.y = 0;
     camera.position.z = 0;
  
 }
 
-// Toggles visibility of Works //
+// Toggles visibility of Works Page//
 function toggleWork() {
   var x = document.getElementById("mainDIV");
   var y = document.getElementById("mainDIV2");
@@ -93,8 +111,9 @@ function toggleWork() {
 
 // Works Page Camera Position //
 function worksPageCamera() {
+  camera.lookAt( moon.position );
   camera.position.x = 0;
-  camera.position.y = 125;
+  camera.position.y = 135;
   camera.position.z = 0;
 }
 
@@ -113,68 +132,16 @@ function contactCamera() {
 }
 
 
-// // Objects // //
-
-// Center of Universe Object
-//const moonTexture = new THREE.TextureLoader().load('moon.jpg');
-//const normalTexture = new THREE.TextureLoader().load('normal.jpg');
-// Creates Sphere and adds it to scene
-//const moon = new THREE.Mesh(
-//  new THREE.SphereGeometry(3,32,32),
-//  new THREE.MeshStandardMaterial({map: moonTexture, normalMap: normalTexture})
-//);
-//scene.add(moon);
-
-const geometry = new THREE.SphereGeometry(3,32,32);
-const material = new THREE.MeshStandardMaterial({color:0x555555});
-//const material = new THREE.MeshBasicMaterial({color:0xFF6347, wireframe:true}); // Wireframe version
-const centerObject = new THREE.Mesh(geometry, material);
-
-// Sets position
-centerObject.position.x = 7;
-centerObject.position.y = -5;
-centerObject.position.z = -15;
-
-// Adds it to the scene
-scene.add(centerObject);
-
-
-// Orbit Object //
-const orbitGeometry = new THREE.TorusGeometry(75,1,10,100);
-const orbitMaterial = new THREE.MeshBasicMaterial({color:0xffffff, wireframe:true}); // Wireframe version
-const orbitPath = new THREE.Mesh(orbitGeometry, orbitMaterial);
-
-orbitPath.rotation.x = 55;
-scene.add(orbitPath);
-
-// Creates Torus
-const torusGeometry = new THREE.TorusGeometry(10,3,16,100);
-const torusMaterial = new THREE.MeshStandardMaterial({color:0xFF6347});
-const torusObject = new THREE.Mesh(torusGeometry, torusMaterial);
-
-torusObject.position.x = 40;
-torusObject.position.z = 50;
-scene.add(torusObject);
-
-// // Lights // //
-
-//Creates some lights and adds them to the scene
-const pointLight = new THREE.PointLight(0xffffff);
-pointLight.position.set(5,5,5);
-
-const ambientLight = new THREE.AmbientLight(0xffffff);
-
-scene.add(pointLight, ambientLight);
+// // Non-Project Objects // //
 
 // Adds helpers for testing
 const lightHelper = new THREE.PointLightHelper(pointLight);
 const gridHelper = new THREE.GridHelper(200,50);
 scene.add(lightHelper,gridHelper);
 
-// Orbit controls
-const controls = new OrbitControls(camera, renderer.domElement);
+// Stars //
 
-// 200 Stars in random poisions
+// 200 of them in random poisions
 function addStar() {
   const geometry = new THREE.SphereGeometry(0.25, 24, 24);
   const material = new THREE.MeshStandardMaterial({ color: 0xffffff });
@@ -186,37 +153,57 @@ function addStar() {
   scene.add(star);
 
 }
-
 Array(200).fill().forEach(addStar);
 
-// Background Image
-const bgTexture = new THREE.TextureLoader().load('spaceblue.png');
-//scene.background = new THREE.Color( 0x000000 );
-scene.background = new THREE.TextureLoader().load('spaceblue.png');
+// Sun //
 
+const sunGeo = new THREE.SphereGeometry(5,32,32);
+const sunMat = new THREE.MeshStandardMaterial({color:0xffff00});
+//const material = new THREE.MeshBasicMaterial({color:0xFF6347, wireframe:true}); // Wireframe version
+const sun = new THREE.Mesh(sunGeo, sunMat);
+// Sun Position
+sun.position.set(0,0,0);
 
-// // Content Objects // //
+scene.add(sun);
 
+// Moon //
 
-// Content Panel //
-const proj1 = new THREE.Mesh(
-  new THREE.BoxGeometry(7,5,.1),
-  new THREE.MeshBasicMaterial({color:0x222222})
+// Texture + Normal map
+const moonTexture = new THREE.TextureLoader().load('moon.jpg');
+const moonNormal = new THREE.TextureLoader().load('normal.jpg');
+// Creates Sphere and adds it to scene
+const moon = new THREE.Mesh(
+  new THREE.SphereGeometry(3,32,32),
+  new THREE.MeshStandardMaterial({map: moonTexture, normalMap: moonNormal})
 );
-scene.add(proj1);
+// Moon Position
+moon.position.z = 28;
+moon.position.setX(-10);
 
-proj1.position.z = 25;
-proj1.position.x = -5;
+scene.add(moon);
 
 
-const proj2 = new THREE.Mesh(
-  new THREE.BoxGeometry(7,5,.1),
-  new THREE.MeshBasicMaterial({color:0x222222})
-);
-scene.add(proj2);
+// About Object //
 
-proj2.position.z = 35;
-proj2.position.x = 5;
+const centerGeo = new THREE.SphereGeometry(3,32,32);
+const centerMat = new THREE.MeshStandardMaterial({color:0x555555});
+//const material = new THREE.MeshBasicMaterial({color:0xFF6347, wireframe:true}); // Wireframe version
+const centerObject = new THREE.Mesh(centerGeo, centerMat);
+// About Object position
+centerObject.position.set(7,-5,-15);
+
+// Adds it to the scene
+scene.add(centerObject);
+
+// Torus //
+
+const torusGeometry = new THREE.TorusGeometry(10,3,16,100);
+const torusMaterial = new THREE.MeshStandardMaterial({color:0xFF6347});
+const torusObject = new THREE.Mesh(torusGeometry, torusMaterial);
+
+torusObject.position.x = 40;
+torusObject.position.z = 50;
+scene.add(torusObject);
 
 // Avatar Box //
 
@@ -231,59 +218,227 @@ const avatarBox = new THREE.Mesh(
 scene.add(avatarBox);
 
 // Avatar Box Position
-avatarBox.position.z = 23;
-avatarBox.position.x = 4;
+avatarBox.position.set(4,10,23);
 
-// Moon //
+// Orbit Object //
 
-// Texture + Normal map
-const moonTexture = new THREE.TextureLoader().load('moon.jpg');
-const normalTexture = new THREE.TextureLoader().load('normal.jpg');
-// Creates Sphere and adds it to scene
-const moon = new THREE.Mesh(
-  new THREE.SphereGeometry(3,32,32),
-  new THREE.MeshStandardMaterial({map: moonTexture, normalMap: normalTexture})
+const orbitGeometry = new THREE.TorusGeometry(100,.5,10,100);
+const orbitMaterial = new THREE.MeshBasicMaterial({color:0xffffff, wireframe:true}); // Wireframe version
+const orbitPath = new THREE.Mesh(orbitGeometry, orbitMaterial);
+
+orbitPath.rotation.x = 55;
+scene.add(orbitPath);
+
+const orbitGeometry1 = new THREE.TorusGeometry(10,.1,10,100);
+const orbitMaterial1 = new THREE.MeshBasicMaterial({color:0xffffff, wireframe:true}); // Wireframe version
+const orbitPath1 = new THREE.Mesh(orbitGeometry1, orbitMaterial1);
+
+orbitPath1.rotation.x = 55;
+scene.add(orbitPath1);
+
+const orbitGeometry2 = new THREE.TorusGeometry(20,.1,10,100);
+const orbitMaterial2 = new THREE.MeshBasicMaterial({color:0xffffff, wireframe:true}); // Wireframe version
+const orbitPath2 = new THREE.Mesh(orbitGeometry2, orbitMaterial2);
+
+orbitPath2.rotation.x = 55;
+scene.add(orbitPath2);
+
+const orbitGeometry3 = new THREE.TorusGeometry(30,.1,10,100);
+const orbitMaterial3 = new THREE.MeshBasicMaterial({color:0xffffff, wireframe:true}); // Wireframe version
+const orbitPath3 = new THREE.Mesh(orbitGeometry3, orbitMaterial3);
+
+orbitPath3.rotation.x = 55;
+scene.add(orbitPath3);
+
+const orbitGeometry4 = new THREE.TorusGeometry(40,.1,10,100);
+const orbitMaterial4 = new THREE.MeshBasicMaterial({color:0xffffff, wireframe:true}); // Wireframe version
+const orbitPath4 = new THREE.Mesh(orbitGeometry4, orbitMaterial4);
+
+orbitPath4.rotation.x = 55;
+scene.add(orbitPath4);
+
+const orbitGeometry5 = new THREE.TorusGeometry(50,.1,10,100);
+const orbitMaterial5 = new THREE.MeshBasicMaterial({color:0xffffff, wireframe:true}); // Wireframe version
+const orbitPath5 = new THREE.Mesh(orbitGeometry5, orbitMaterial5);
+
+orbitPath5.rotation.x = 55;
+scene.add(orbitPath5);
+
+const orbitGeometry6 = new THREE.TorusGeometry(60,.1,10,100);
+const orbitMaterial6 = new THREE.MeshBasicMaterial({color:0xffffff, wireframe:true}); // Wireframe version
+const orbitPath6 = new THREE.Mesh(orbitGeometry6, orbitMaterial6);
+
+orbitPath6.rotation.x = 55;
+scene.add(orbitPath6);
+
+const orbitGeometry7 = new THREE.TorusGeometry(70,.1,10,100);
+const orbitMaterial7 = new THREE.MeshBasicMaterial({color:0xffffff, wireframe:true}); // Wireframe version
+const orbitPath7 = new THREE.Mesh(orbitGeometry7, orbitMaterial7);
+
+orbitPath7.rotation.x = 55;
+scene.add(orbitPath7);
+
+const orbitGeometry8 = new THREE.TorusGeometry(80,.1,10,100);
+const orbitMaterial8 = new THREE.MeshBasicMaterial({color:0xffffff, wireframe:true}); // Wireframe version
+const orbitPath8 = new THREE.Mesh(orbitGeometry8, orbitMaterial8);
+
+orbitPath8.rotation.x = 55;
+scene.add(orbitPath8);
+
+const orbitGeometry9 = new THREE.TorusGeometry(90,.1,10,100);
+const orbitMaterial9 = new THREE.MeshBasicMaterial({color:0xffffff, wireframe:true}); // Wireframe version
+const orbitPath9 = new THREE.Mesh(orbitGeometry9, orbitMaterial9);
+
+orbitPath9.rotation.x = 55;
+scene.add(orbitPath9);
+
+
+
+
+
+// // Project Planets // //
+
+
+// Planet 1
+const proj1Geo = new THREE.SphereGeometry(2,32,32);
+const proj1Mat = new THREE.MeshStandardMaterial({color:0x555555});
+const proj1Planet = new THREE.Mesh(proj1Geo, proj1Mat);
+// About Object position
+proj1Planet.position.set(-10,0,0);
+
+// Adds it to the scene
+orbitPath1.add(proj1Planet);
+
+// Planet 2
+const proj2Geo = new THREE.SphereGeometry(2,32,32);
+const proj2Mat = new THREE.MeshStandardMaterial({color:0x555555});
+const proj2Planet = new THREE.Mesh(proj2Geo, proj2Mat);
+// About Object position
+proj2Planet.position.set(-20,0,0);
+
+// Adds it to the scene
+orbitPath2.add(proj2Planet);
+
+// Planet 3
+const proj3Geo = new THREE.SphereGeometry(2,32,32);
+const proj3Mat = new THREE.MeshStandardMaterial({color:0x555555});
+const proj3Planet = new THREE.Mesh(proj3Geo, proj3Mat);
+// About Object position
+proj3Planet.position.set(-30,0,0);
+
+// Adds it to the scene
+orbitPath3.add(proj3Planet);
+
+// Planet 4
+const proj4Geo = new THREE.SphereGeometry(2,32,32);
+const proj4Mat = new THREE.MeshStandardMaterial({color:0x555555});
+const proj4Planet = new THREE.Mesh(proj4Geo, proj4Mat);
+// About Object position
+proj4Planet.position.set(-40,0,0);
+
+// Adds it to the scene
+orbitPath4.add(proj4Planet);
+
+// Planet 5
+const proj5Geo = new THREE.SphereGeometry(2,32,32);
+const proj5Mat = new THREE.MeshStandardMaterial({color:0x555555});
+const proj5Planet = new THREE.Mesh(proj5Geo, proj5Mat);
+// About Object position
+proj5Planet.position.set(-50,0,0);
+
+// Adds it to the scene
+orbitPath5.add(proj5Planet);
+
+// Planet 6
+const proj6Geo = new THREE.SphereGeometry(2,32,32);
+const proj6Mat = new THREE.MeshStandardMaterial({color:0x555555});
+const proj6Planet = new THREE.Mesh(proj6Geo, proj6Mat);
+// About Object position
+proj6Planet.position.set(-60,0,0);
+
+// Adds it to the scene
+orbitPath6.add(proj6Planet);
+
+// Planet 7
+const proj7Geo = new THREE.SphereGeometry(2,32,32);
+const proj7Mat = new THREE.MeshStandardMaterial({color:0x555555});
+const proj7Planet = new THREE.Mesh(proj7Geo, proj7Mat);
+// About Object position
+proj7Planet.position.set(-70,0,0);
+
+// Adds it to the scene
+orbitPath7.add(proj7Planet);
+
+// Planet 8
+const proj8Geo = new THREE.SphereGeometry(2,32,32);
+const proj8Mat = new THREE.MeshStandardMaterial({color:0x555555});
+const proj8Planet = new THREE.Mesh(proj8Geo, proj8Mat);
+// About Object position
+proj8Planet.position.set(-80,0,0);
+
+// Adds it to the scene
+orbitPath8.add(proj8Planet);
+
+// Planet 9
+const proj9Geo = new THREE.SphereGeometry(2,32,32);
+const proj9Mat = new THREE.MeshStandardMaterial({color:0x555555});
+const proj9Planet = new THREE.Mesh(proj9Geo, proj9Mat);
+// About Object position
+proj9Planet.position.set(-90,0,0);
+
+// Adds it to the scene
+orbitPath9.add(proj9Planet);
+
+// // About Section // //
+
+// About Planet //
+
+
+// About Panel//
+const aboutPanel = new THREE.Mesh(
+  new THREE.BoxGeometry(4,3,.1),
+  new THREE.MeshBasicMaterial({color:0x222222})
 );
-scene.add(moon);
+aboutPanel.position.set(-10,0,0);
+scene.add(aboutPanel);
 
-// Moon Position
-moon.position.z = 28;
-moon.position.setX(-10);
+// // Project Panels // //
 
-// Project Box 1 - Games //
-const proj1Texture = new THREE.TextureLoader().load('avatar.png');
 
-const proj1Box = new THREE.Mesh(
-    new THREE.BoxGeometry(5,5,5),
-    new THREE.MeshBasicMaterial({map: proj1Texture})
+// Content Panel 1//
+const proj1 = new THREE.Mesh(
+  new THREE.BoxGeometry(8,5,.1),
+  new THREE.MeshBasicMaterial({color:0x222222})
 );
+proj1.position.z = 25;
+proj1.position.x = -5;
+scene.add(proj1);
 
-proj1Box.position.z = 36;
-proj1Box.position.x = 4;
 
-// Project Box 2 - VR/AR //
-const proj2Texture = new THREE.TextureLoader().load('avatar.png');
 
-const proj2Box = new THREE.Mesh(
-    new THREE.BoxGeometry(5,5,5),
-    new THREE.MeshBasicMaterial({map: proj2Texture})
+// Content Panel 2//
+const proj2 = new THREE.Mesh(
+  new THREE.BoxGeometry(8,5,.1),
+  new THREE.MeshBasicMaterial({color:0x222222})
 );
+proj2.position.z = 5;
+proj2.position.x = 25;
+scene.add(proj2);
 
-proj2Box.position.z = 46;
-proj2Box.position.x = -6;
 
-// Project Box 3 - 3D stuff //
-const proj3Texture = new THREE.TextureLoader().load('avatar.png');
 
-const proj3Box = new THREE.Mesh(
-    new THREE.BoxGeometry(5,5,5),
-    new THREE.MeshBasicMaterial({map: proj3Texture})
+// Content Panel 3//
+const proj3 = new THREE.Mesh(
+  new THREE.BoxGeometry(8,5,.1),
+  new THREE.MeshBasicMaterial({color:0x222222})
 );
+proj3.position.z = 5;
+proj3.position.x = -50;
+scene.add(proj3);
 
-proj3Box.position.z = 60;
-proj3Box.position.x = 6;
 
-scene.add(proj1Box,proj2Box,proj3Box);
+
+
 
 
 // Scroll animation
@@ -299,7 +454,19 @@ function moveCamera() {
   
 
   // Position on Orbit //
-  if(!workPage){orbitPath.rotation.z = t * 0.001;}
+  if(!workPage){
+    orbitPath.rotation.z = t * 0.001;
+
+    orbitPath1.rotation.z += 0.003;
+    orbitPath2.rotation.z += 0.005;
+    orbitPath3.rotation.z += 0.009;
+    orbitPath4.rotation.z += 0.007;
+    orbitPath5.rotation.z += 0.002;
+    orbitPath6.rotation.z += 0.005;
+    orbitPath7.rotation.z += 0.006;
+    orbitPath8.rotation.z += 0.010;
+    orbitPath9.rotation.z += 0.005;
+  }
 
   
 
@@ -319,20 +486,53 @@ document.body.onscroll = moveCamera;
 
 
 
-
-
-
 // // Renders Scene // //
 
+var t = 0;
 // Recursive function that animates the scene
 function animate() {
     requestAnimationFrame(animate);
 
+    const time = clock.getElapsedTime();
+
+    // Moves Camera
+    //camera.position.x = Math.sin( time/5 ) * 2;
+    //camera.position.z = Math.cos( time/5 ) * 2;
+    
+    //camera.lookAt( centerObject.position );
+
+    t += 0.01;          
+    sun.rotation.y += 0.005;
+    moon.rotation.y += 0.03;
+
+    moon.position.x = 20*Math.cos(t) + 5;
+    moon.position.z = 20*Math.sin(t) + 5; // These to strings make it work
+    
+    
+    
+
+
+
+    // Moves Torus
     torusObject.rotation.x += 0.01;
     torusObject.rotation.y += 0.005;
     torusObject.rotation.z += 0.01;
 
-    if(workPage){orbitPath.rotation.z += 0.001;}
+
+    // Auto Orbit when on Works Page
+    if(workPage){
+      orbitPath.rotation.z += 0.001;
+
+      orbitPath1.rotation.z += 0.003;
+      orbitPath2.rotation.z += 0.005;
+      orbitPath3.rotation.z += 0.009;
+      orbitPath4.rotation.z += 0.007;
+      orbitPath5.rotation.z += 0.002;
+      orbitPath6.rotation.z += 0.005;
+      orbitPath7.rotation.z += 0.006;
+      orbitPath8.rotation.z += 0.010;
+      orbitPath9.rotation.z += 0.005;
+    }
 
     controls.update();
 
