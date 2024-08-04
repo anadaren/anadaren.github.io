@@ -5,6 +5,10 @@
 .class
 */
 
+* {
+  /*outline: 2px solid red;*/
+}
+
 :root {
   font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
   line-height: 1.5;
@@ -41,18 +45,12 @@ a:hover {
 
 body {
   margin: 0;
-  display: flex;
   place-items: center;
   min-width: 320px;
   min-height: 100vh;
 
   font-family: "Lucida Console", monospace;
   padding: 0;
-}
-
-h1 {
-  font-size: 3.2em;
-  line-height: 1.1;
 }
 
 #app {
@@ -62,87 +60,10 @@ h1 {
   text-align: center;
 }
 
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
-}
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
-.logo.vanilla:hover {
-  filter: drop-shadow(0 0 2em #f7df1eaa);
-}
 
-.card {
-  padding: 2em;
-}
-
-.read-the-docs {
-  color: #888;
-}
-
-button {
-  border-radius: 8px;
-  border: 1px solid transparent;
-  padding: 0.6em 1.2em;
-  font-size: 1em;
-  font-weight: 500;
-  font-family: inherit;
-  background-color: #1a1a1a;
-  cursor: pointer;
-  transition: border-color 0.25s;
-}
-button:hover {
-  border-color: #646cff;
-}
-button:focus,
-button:focus-visible {
-  outline: 4px auto -webkit-focus-ring-color;
-}
-
-@media (prefers-color-scheme: light) {
-  :root {
-    color: #213547;
-    background-color: #ffffff;
-  }
-  a:hover {
-    color: #747bff;
-  }
-  button {
-    background-color: #f9f9f9;
-  }
-}
-
-
-  
-  * {
-    /*outline: 2px solid red;*/
-  }
-  
-  canvas {
-    position: fixed;
-    top: 0;
-    left: 0;
-  }
-  
-  body {
-    font-family: "Lucida Console", monospace;
-    margin: 0;
-    padding: 0;
-  }
-  
-  main {
-    position: absolute;
-    width: 100vw;
-    color: white;
-    z-index: 99;
-    width: 100%;
-    margin: 0px auto;
-    padding: 120px 0px;
-    display: grid;
-    grid-template-columns: repeat(12, 1fr);
+  h1 {
+    font-size: 2em;
+    line-height: 1.1;
   }
   
   h1, h2, h3, blockquote {
@@ -151,24 +72,15 @@ button:focus-visible {
     font-style: normal;
   }
   
-  blockquote {
-    grid-column: 2 / span 9;
-    margin: 0;
-    padding: 0;
-    font-size: 1.25rem;
+
+
+  img.placeholder-pic {
+    padding: 25px;
+    width: 400px;
+    height: 550px;
+  
   }
   
-  blockquote p {
-    color: black;
-    background-color: white;
-    font-size: 2rem;
-    display: inline;
-    line-height: 1;
-    left: 50%;
-    font-family: "Lucida Console", monospace;
-  }
-  
- 
   
   section {
     line-height: 1.5;
@@ -357,9 +269,8 @@ button:focus-visible {
   
   .grid-container#about-content {
     grid-template-columns: auto auto;
-    margin-left: 5rem;
-    margin-bottom: 2rem;
-    gap: 100px;
+    margin: 2rem 2rem 2rem 3rem;
+    gap: 25px;
     /*outline: 2px solid red;*/
   }
   
@@ -506,10 +417,7 @@ button:focus-visible {
     display: inline;
     padding: 2px;
     margin-bottom: 0px;
-    
-  }
-  
-  #page-footer img {
+
     -webkit-filter: invert(1);
      filter: invert(1);
      opacity: .75;
@@ -517,59 +425,6 @@ button:focus-visible {
   
   /*/ End of Footer /*/
   
-  
-  img.placeholder-pic {
-    padding: 25px;
-    width: 400px;
-    height: 550px;
-  
-  }
-  
-  
-  
-  /* Page Animations */
-  
-  #pageMain {
-    position: absolute;
-    margin-top: 200px;
-    margin-left: 75px;
-    margin-right: 75px;
-    z-index: 2;
-  
-    animation: fadeIn 1s linear forwards;
-  }
-  
-  #pageMain header {
-    background: var(--dark-bg);
-    font-size: 1.25rem;
-    padding: 2rem;
-    margin-top: 5rem;
-    margin-left: 1rem;
-    margin-right: 40rem;
-    margin-bottom: 20rem;
-  
-    animation: fadeIn 1s linear forwards;
-  }
-  
-  #pageAbout {
-    position: absolute;
-    margin-top: 200px;
-    margin-left: 75px;
-    margin-right: 75px;
-    z-index: 2;
-  
-    animation: fadeIn 1s linear forwards;
-  }
-  
-  #pageProjects {
-    position: absolute;
-    margin-top: 200px;
-    margin-left: 75px;
-    margin-right: 75px;
-    z-index: 2;
-  
-    animation: fadeIn 1s linear forwards;
-  }
   
   /* Scroll Button */
   
@@ -581,86 +436,69 @@ button:focus-visible {
     bottom: 18px; /* Place the button at the bottom of the page */
     right: 18px; /* Place the button 30px from the right */
     z-index: 99; /* Make sure it does not overlap */
-    text-align: center;
     background-color: red; /* Set a background color */
-    color: white; /* Text color */
     cursor: pointer; /* Add a mouse pointer on hover */
     padding: 10px; /* Some padding */
     border-radius: 10px; /* Rounded corners */
-    font-size: 30px; /* Increase font size */
   }
   
   #myBtn:hover {
     background-color: white;
     color: black; /* Add a dark-grey background on hover */
   }
-  
-  scroll-text {
-    position:absolute;
-    left: 45%;
-    margin-bottom: 0rem;
-    padding: 0rem;
-    font-size: 4rem;
+
+  .arrow {
+    margin: 0 auto;
+    width: 0; 
+    height: 0; 
+    border-left: 10px solid transparent;
+    border-right: 10px solid transparent;
+    
+    border-bottom: 10px solid white;
+  }
+  .arrow:hover {
+    -webkit-filter: invert(1);
+    filter: invert(1);
   }
   
-  @keyframes fadeIn {
-    0% { opacity: 0; }
-    100% { opacity: 1; }
-  }
   
-  @keyframes fadeOut {
-    0% { opacity: 1; }
-    100% { opacity: 0; }
-  }
+@keyframes fadeIn {
+  0% { opacity: 0; }
+  100% { opacity: 1; }
+}
   
-  @keyframes fadeUp {
-    0% { margin-top: 25%;
-        height: 300%;
-        opacity: 0; }
-    100% {
-        height: 300%;
-        opacity: 1; }
-  }
   
-  @keyframes fadeDown {
-    0% { opacity: 0; }
-    100% { opacity: 1; }
-  }
+@keyframes fadeUp {
+  0% { margin-top: 25%;
+      height: 300%;
+      opacity: 0; }
+  100% {
+      height: 300%;
+      opacity: 1; }
+}
   
-  @keyframes fadeLeft {
-    0% { opacity: 0; }
-    100% { opacity: 1; }
-  }
-  
-  @keyframes fadeRight {
-    0% { opacity: 0; }
-    100% { opacity: 1; }
-  }
   
   /*/ Mobile View /*/
   
-  @media only screen and (max-width: 650px) {
-    /*/ Navigation Bar /*/
+@media only screen and (max-width: 650px) {
+  /*/ Navigation Bar Switch to Hamberger View/*/
+  nav .navlink {
+    display: none;
+  }
+  nav #ham {
+    display: inline;
+  }
+
   
-    /* Page Links */
-    nav .navlink {
-      display: none;
-    }
+  /* About Section */
+  /* Stack image above text */
   
-    nav #ham {
-      display: inline;
-    }
+  .grid-container#about-content {
+    grid-template-columns: auto;
+  }
   
-    /*/ End of Navigation Bar /*/
-  
-    /* About Section */
-  
-    .grid-container#about-content {
-      grid-template-columns: auto;
-    }
-  
-    /* Projects Section */
-  
+  /* Projects Section */
+  /* Swtich Big Project Boxes to Little Project Boxes */
   .grid-container#projects {
     grid-template-columns: auto;
   }
@@ -684,18 +522,31 @@ button:focus-visible {
     z-index: 1;
     box-shadow: 0px 4px 8px 0 rgba(0, 0, 0, 0.75), 0 6px 20px 0 rgba(0, 0, 0, 0.75);
     }
-    .project-box img {
-      width: 350px;
-      height: 250px;
-      border-radius: 25px;
-      transition: 0.3s;
+
+     /*/ Footer /*/
+  
+  #page-footer p {
+    margin: 25px 0px 0px 25px;
+    font-size: .75rem;
+  
+  }
+  #page-footer ul {
+    margin: 15px 25px 0px 0px;
+    padding: 0;
+  }
+  #page-footer li {
+    float: right;
+    display: inline;
+    padding: 2px;
+    margin-bottom: 0px;
+    
+  }
+
+    #myBtn {
+      display: none;
+    }
+    .arrow {
+      display: none;
     }
     
-    .project-box h2 {
-      margin: 0;
-    }
-    
-    .project-box p {
-      font-size: 1rem;
-    }
   }
