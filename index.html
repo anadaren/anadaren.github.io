@@ -1,14 +1,19 @@
 <!DOCTYPE html>
 <html lang="en">
+  <!--
+    WRITTEN BY: Anastasia Green
+    EMAIL: ana.daren.green@gmail.com
+   -->
   <head>
     <meta charset="UTF-8">
+    <meta name="author" content="Anastasia Green">
     <meta name="description" content="Anastasia Green's developer portfolio">
     <meta name="keywords" content="HTML, CSS, JavaScript">
     <meta name="author" content="Anastasia Green">
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta property="og:image" content="images/space.jpg">
 
-    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <link rel="icon" type="image/svg+xml" href="/Images/logo.png" />
     <link rel="stylesheet" href="/style.css">
     <title>Anastasia Green Portfolio</title>
   </head>
@@ -19,7 +24,7 @@
     <!--Navigation Bar-->
     <nav>
       <!--Home Icon-->
-      <a href="#name" style="float:left"><img src="/Images/pixelicon.png" alt="Home Image"></a>
+      <a href="#name" style="float:left"><img src="/Images/logo.png" alt="Home Image"></a>
       <!--Name Text-->
       <a href="#name" style="float:left"><p>Anastasia D. Green</p></a>
       
@@ -34,17 +39,17 @@
         <span></span>
         <span></span>
       </div>
+    
+      <!--Hamburger Menu-->
+      <div class="off-screen-menu">
+          <ul>
+            <li><a href="#about" class="navlink">About</a></a></li>
+            <li><a href="#projects" class="navlink">Projects</a></li>
+            <li><a href="#contact" class="navlink">Contact</a></li>
+          </ul>
+      </div>
+
     </nav>
-
-    <!--Off screen mobile nav menu-->
-    <div class="off-screen-menu">
-        <ul>
-          <li><a href="#about" class="navlink">About</a></a></li>
-          <li><a href="#projects" class="navlink">Projects</a></li>
-          <li><a href="#contact" class="navlink">Contact</a></li>
-        </ul>
-    </div>
-
     <!--End of Nav Bar-->
 
     <!--Scroll to top Button-->
@@ -68,27 +73,22 @@
 
       <!--About Section-->
       <section id="about">
-        <div class="grid-container" id="about">
-        
-          
-          <div class="section-box">
+        <div class="grid-container" id="about-content">
+          <img src="images/aboutme.jpg" height=400 width=300 id="about-img">
+
+          <div class="section-box" id="about-box">
             <div id="abt-top">
               <h1>About Me</h1>
             </div>
 
-            <div class="grid-container" id="about-content">
-              <img src="images/aboutme.jpg" height=400 width=300>
-              
-              <p>Hi, call me Ana! I'm an aspiring front-end developer, and visual designer! I am 
+            <p>Hi, call me Ana! I'm an aspiring front-end developer, and visual designer! I am 
                 currently based in Brooklyn, New York, and love designing projects that sit at the 
                 intersecion of the creative and the technical. I'm passionate about solving puzzles, 
                 designing interactive experiences, and bringing digital worlds to life!
               
-              <br><br><a href="mailto:ana.daren.green@gmail.com" class="button-style">Resume</a></p>
-              
-            </div>
-
+            <br><br><a href="#projects" class="button-style">View My Work</a></p>
           </div>
+
         </div>
       </section>
       <!--End of About Section-->
