@@ -29,8 +29,9 @@
   --color-light3: rgba(254,224,140,255);
   --color-medium: rgba(7,4,64,255);
   --color-dark: rgba(7,4,64,255);
-  --color-pink: rgb(218,35,108);
+  --color-pink: rgb;
   --text-color: rgb(255,255,255);
+  --button-color: rgb(102, 0, 104);
 }
 
  /* All Links */
@@ -64,10 +65,10 @@ body {
 .hidden {
   opacity: 0;
   transition: all 1s;
-  }
-  .show {
-    opacity: 1;
-  }
+}
+.show {
+  opacity: 1;
+}
 
 
   h1 {
@@ -95,12 +96,13 @@ body {
     display: grid;
     /*place-items: center;*/
     align-content: center;
+    min-height: 50vh;
   }
   
   .section-box {
     background: var(--dark-bg);
     position: static;
-    font-size: 1.2rem;
+    font-size: 1rem;
     margin: 0;
     /*animation: fadeIn 1s linear forwards;*/
     border-radius: 25px;
@@ -120,7 +122,6 @@ body {
     margin-right: 75px;
     gap: 50px;
     align-content: center;
-    
   }
   
   /*/ Navigation Bar /*/
@@ -219,9 +220,7 @@ body {
     top: 50%;
     transform: translate (-50%, 50%) rotate(45%);
   }
-  
-  /*/ End of Navigation Bar /*/
-  
+
   /* Off Screen Menu */
   .off-screen-menu {
     background-color: var(--dark-bg);
@@ -242,34 +241,29 @@ body {
   .off-screen-menu.active {
     right: 0;
   }
+
+  /*/ End of Navigation Bar /*/
   
   
   /* Top Section */
-  #name {
+#name {
     padding-top: 250px;
-    padding-bottom: 200px;
+    padding-bottom: 250px;
   }
 
   #name-box  {
-    width: 35rem;
+    max-width: 30rem;
     margin-left: 75px;
-    max-width: 600px;
-    min-height: 18rem;
-  
-    /*animation-name: fadeUp;
-    animation-duration: .75s;
-    animation-delay: calc(var(--scroll) * -1s);*/
+    min-height: 15rem;
   }
   
   .button-style {
     position: static;
-    background: purple;
+    background: var(--button-color);
     color: var(--text-color);
     padding: 15px;
-    margin: 15px 0px 15px 0px;
     border-radius: 15px;
   }
-  
   .button-style:hover {
     background: var(--text-color);
     color: black;
@@ -278,22 +272,25 @@ body {
   
   /* About Section */
   #about {
+    padding-top: 150px;
     padding-bottom: 100px;
   }
 
   .grid-container#about-content {
-    gap: 25px;
+    gap: 0px;
   }
 
-  .grid-container#about-content img {
-    height: 84%;
-    width: 75%;
-    margin-top: 120px;
+  #about-img {
+    height: auto;
+    width: 85%;
   }
 
   #about-box {
-    margin-top: 120px;
     max-width: 650px;
+  }
+
+  #about-box ul {
+    columns: 2;
   }
 
   #abt-top {
@@ -305,7 +302,8 @@ body {
   
   /* Projects Section */
   #projects {
-    padding-top: 50px;
+    padding-top: 100px;
+    padding-bottom: 100px;
   }
   
   #proj-top {
@@ -320,12 +318,9 @@ body {
   }
   
   hr.proj-line {
-    z-index: 1;
     position: relative;
-    margin-top: 10px;
     text-align: center;
-    transition: 0.3s;
-    border: 5px solid white;
+    border: 3px solid white;
     border-radius: 5px;
     width: 15%;
     box-shadow: 0px 0px 15px rgb(0, 0, 0, 0.75);
@@ -333,6 +328,7 @@ body {
 
   .grid-container#projects {
     grid-template-columns: auto auto auto;
+    margin: 0px 50px 0px 50px;
   }
 
   .grid-container#projects:nth-child(2) {
@@ -384,12 +380,16 @@ body {
 
   
   /* Contact Section */
+  #contact {
+    padding-top: 200px;
+    padding-bottom: 200px;
+  }
   
   #contact-box {
     position: relative;
-    width: 35rem;
-    margin-top: 300px;
+    max-width: 30rem;
     margin-left: 100px;
+    
   }
   
   #contact-box img {
@@ -406,18 +406,20 @@ body {
   
   
   /*/ Footer /*/
+
+  #footer {
+    min-height: 0;
+  }
   
   #page-footer {
     position: absolute;
     border-radius: 0;
     padding: 0px;
     width: 100%;
-    margin: 10rem 0 0 0;
     background-color: rgb(21,28,37);
     height: 75px;
     max-width: 100%;
     z-index: 2;
-    border: 0px;
   }
   
   #page-footer p {
@@ -508,23 +510,47 @@ body {
   }
 }
   
-/*/ Semi-Mobile View /*/
+/*/ Small Screen View /*/
 @media only screen and (max-width: 1075px) {
-  /* Projects Section */
-  /* Swtich Big Project Boxes to Little Project Boxes */
+  /* Swtich to 2 columns of Project Boxes */
   .grid-container#projects {
     grid-template-columns: auto auto;
+    margin: 0;
   }
 }
 
+/*/ Semi-Mobile View /*/
 @media only screen and (max-width: 850px) {
-  /* About Section */
+  /* Mobile Top Section */
+  #name {
+    place-items: center;
+  }
+  #name-box {
+    margin-left: 0;
+  }
+
+  
+  /* Mobile About Section */
 
   /* Stack image above text */
   .grid-container#about-content {
     grid-template-columns: auto;
     place-items: center;
   }
+
+  #about-img {
+    padding-bottom: 50px;
+  }
+
+  /* Mobile Contact Section */
+  #contact {
+    place-items: center;
+  }
+
+  #contact-box {
+    margin-left: 0;
+  }
+
 }
 
 /*/ Mobile View /*/
@@ -536,16 +562,24 @@ body {
   nav #ham {
     display: inline;
   }
+
+  /* Mobile Top Section */
+  #name-box {
+    max-width: 300px;
+    margin-left: 0;
+  }
   
-  /*/ Projects Section /*/
+  /*/ Mobile Projects Section /*/
   /* Swtich Big Project Boxes to Little Project Boxes */
   .grid-container#projects {
     grid-template-columns: auto;
+    
+    
   }
   
   .project-box {
     background: var(--dark-bg);
-    position: relative;
+
     width: 350px;
     height: 450px;
     border-radius: 25px;
@@ -556,12 +590,17 @@ body {
   
     border: 1px solid;
     padding: 10px;
-    transition: 0.3s;
     z-index: 1;
     box-shadow: 0px 4px 8px 0 rgba(0, 0, 0, 0.75), 0 6px 20px 0 rgba(0, 0, 0, 0.75);
   }
 
-  /*/ Footer /*/
+  /*/ Mobile Contact Section /*/
+  #contact-box {
+    max-width: 300px;
+    margin-left: 0;
+  }
+
+  /*/ Mobile Footer /*/
   #page-footer {
     height: 100px;
   }
