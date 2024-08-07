@@ -1,18 +1,17 @@
-import './style.css'
-import javascriptLogo from './javascript.svg'
-import viteLogo from '/vite.svg'
-import { setupCounter } from './counter.js'
-
-document.querySelector('#app').innerHTML = `
-  <div>
-    <div class="card">
-      <button id="counter" type="button"></button>
-    </div>
-    
-  </div>
-`
-setupCounter(document.querySelector('#counter'))
-
+/* Scroll Animations */
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach((entry) => {
+    console.log(entry)
+    if(entry.isIntersecting) {
+      entry.target.classList.add('show');
+    } else {
+      entry.target.classList.remove('show');
+    }
+  })
+});
+// Hides hidden elements before they are scrolled to
+const hiddenElements = document.querySelectorAll('.hidden');
+hiddenElements.forEach((el) => observer.observe(el));
 
 
 /* Mobile Hamburger Menu */
@@ -24,17 +23,6 @@ hamMenu.addEventListener('click', () => {
   offScreenMenu.classList.toggle('active');
 })
 
-// Copy Email Button
-const emailAdd = "ana.daren.green@gmail.com"
-function copyEmail() {
-  // Get the text field
-  var copyText = emailAdd;
-   // Copy the text inside the text field
-  navigator.clipboard.writeText(emailAdd);
-
-  // Alert the copied text
-  alert("Copied the text: " + emailAdd);
-} 
 
 /* Scroll to top button */
 

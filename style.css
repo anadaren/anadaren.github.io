@@ -15,7 +15,6 @@
   font-weight: 400;
 
   color-scheme: light dark;
-  color: rgba(255, 255, 255, 0.87);
   background-color: #242424;
 
   font-synthesis: none;
@@ -31,12 +30,13 @@
   --color-medium: rgba(7,4,64,255);
   --color-dark: rgba(7,4,64,255);
   --color-pink: rgb(218,35,108);
+  --text-color: rgb(255,255,255);
 }
 
  /* All Links */
 a {
   font-weight: 500;
-  color: #ffffff;
+  color: var(--text-color);
   text-decoration: inherit;
 }
 a:hover {
@@ -45,12 +45,13 @@ a:hover {
 
 body {
   margin: 0;
+  padding: 0;
   place-items: center;
   min-width: 320px;
   min-height: 100vh;
 
   font-family: "Lucida Console", monospace;
-  padding: 0;
+  color: var(--text-color);
 }
 
 #app {
@@ -59,6 +60,14 @@ body {
   padding: 2rem;
   text-align: center;
 }
+
+.hidden {
+  opacity: 0;
+  transition: all 1s;
+  }
+  .show {
+    opacity: 1;
+  }
 
 
   h1 {
@@ -83,15 +92,17 @@ body {
   
   
   section {
+    display: grid;
+    /*place-items: center;*/
+    align-content: center;
   }
   
   .section-box {
     background: var(--dark-bg);
     position: static;
-    color: white;
     font-size: 1.2rem;
     margin: 0;
-    animation: fadeIn 1s linear forwards;
+    /*animation: fadeIn 1s linear forwards;*/
     border-radius: 25px;
     padding: 20px;
     width: 100%;
@@ -118,7 +129,6 @@ body {
   nav {
     background: var(--dark-bg);
     position: fixed;
-    color: white;
     top: 0;
     height: 60px;
     width: 100%;
@@ -150,7 +160,6 @@ body {
   nav .navlink {
     font-family: "Lucida Console", monospace;
     float: right;
-    color: #f2f2f2;
     text-align: center;
     padding: 20px 16px;
     text-decoration: none;
@@ -159,13 +168,13 @@ body {
   
   /* Page Link Hover */
   nav .navlink:hover {
-    background-color: white;
+    background-color: var(--text-color);
     color: black;
   }
   
   /* Active/Current Link */
   nav .navlink.active {
-    background-color: white;
+    background-color: var(--text-color);
     color: black;
   }
   
@@ -183,7 +192,7 @@ body {
   #ham span {
     height: 4px;
     width: 75%;
-    background-color: white;
+    background-color: var(--text-color);
     border-radius: 25px;
     position: absolute;
     top: 50%;
@@ -243,27 +252,26 @@ body {
 
   #name-box  {
     width: 35rem;
-    margin-top: 0px;
     margin-left: 75px;
     max-width: 600px;
     min-height: 18rem;
   
-    animation-name: fadeUp;
+    /*animation-name: fadeUp;
     animation-duration: .75s;
-    animation-delay: calc(var(--scroll) * -1s);
+    animation-delay: calc(var(--scroll) * -1s);*/
   }
   
   .button-style {
     position: static;
     background: purple;
-    color: white;
+    color: var(--text-color);
     padding: 15px;
     margin: 15px 0px 15px 0px;
     border-radius: 15px;
   }
   
   .button-style:hover {
-    background: white;
+    background: var(--text-color);
     color: black;
   }
 
@@ -278,6 +286,8 @@ body {
   }
 
   .grid-container#about-content img {
+    height: 84%;
+    width: 75%;
     margin-top: 120px;
   }
 
@@ -290,7 +300,6 @@ body {
     font-size: 1.25rem;
     z-index: 1;
     position: relative;
-    color: white;
   }
   
   
@@ -303,22 +312,18 @@ body {
     font-size: 1.25rem;
     z-index: 1;
     position: relative;
-    color: white;
-    margin-bottom: 10px;
     text-align: center;
-    padding: 10px;
-    animation: fadeIn 1s linear forwards;
+
+    /*animation: fadeIn 1s linear forwards;
     transition: 0.3s;
-    text-shadow: 0px 0px 15px rgb(0, 0, 0, 0.75);
+    text-shadow: 0px 0px 15px rgb(0, 0, 0, 0.75);*/
   }
   
   hr.proj-line {
     z-index: 1;
     position: relative;
     margin-top: 10px;
-    margin-bottom: 25px;
     text-align: center;
-    animation: fadeIn 1s linear forwards;
     transition: 0.3s;
     border: 5px solid white;
     border-radius: 5px;
@@ -329,11 +334,17 @@ body {
   .grid-container#projects {
     grid-template-columns: auto auto auto;
   }
+
+  .grid-container#projects:nth-child(2) {
+    transition-delay: 200ms;
+   }
+   .grid-container#projects:nth-child(3) {
+    transition-delay: 400ms;
+   }
   
   .project-box {
     background: var(--dark-bg);
     position: relative;
-    color: white;
     height: 375px;
     border-radius: 25px;
     font-size: 1rem;
@@ -342,7 +353,7 @@ body {
     border: 1px solid;
     padding: 10px;
     text-align: center;
-    animation: fadeIn 1s linear forwards;
+    /*animation: fadeIn 1s linear forwards;*/
     
     transition: 0.3s;
     z-index: 1;
@@ -370,9 +381,9 @@ body {
   }
 
   
+
+  
   /* Contact Section */
- #contact {
-  }
   
   #contact-box {
     position: relative;
@@ -411,7 +422,6 @@ body {
   
   #page-footer p {
     float: left;
-    color: white;
     font-family: "Lucida Console", monospace;
     margin: 25px 0px 0px 75px;
     font-size: 1rem;
@@ -466,7 +476,7 @@ body {
     border-left: 10px solid transparent;
     border-right: 10px solid transparent;
     
-    border-bottom: 10px solid white;
+    border-bottom: 10px solid var(--text-color);
   }
   .arrow:hover {
     -webkit-filter: invert(1);
@@ -489,28 +499,32 @@ body {
       height: 300%;
       opacity: 1; }
 }
+
+
+@media(prefers-reduced-motion) {
+
+  .hidden {
+    transition: none;
+  }
+}
   
 /*/ Semi-Mobile View /*/
+@media only screen and (max-width: 1075px) {
+  /* Projects Section */
+  /* Swtich Big Project Boxes to Little Project Boxes */
+  .grid-container#projects {
+    grid-template-columns: auto auto;
+  }
+}
+
 @media only screen and (max-width: 850px) {
   /* About Section */
 
   /* Stack image above text */
   .grid-container#about-content {
     grid-template-columns: auto;
-
+    place-items: center;
   }
-
-  #about-img {
-    height: 500px;
-    width: 375px;
-  }
-
-  /* Projects Section */
-  /* Swtich Big Project Boxes to Little Project Boxes */
-  .grid-container#projects {
-    grid-template-columns: auto auto;
-  }
-
 }
 
 /*/ Mobile View /*/
@@ -532,7 +546,6 @@ body {
   .project-box {
     background: var(--dark-bg);
     position: relative;
-    color: white;
     width: 350px;
     height: 450px;
     border-radius: 25px;
@@ -540,7 +553,6 @@ body {
     margin-top: 25px;
     margin-bottom: 25px;
     text-align: center;
-    animation: fadeIn 1s linear forwards;
   
     border: 1px solid;
     padding: 10px;
@@ -550,6 +562,9 @@ body {
   }
 
   /*/ Footer /*/
+  #page-footer {
+    height: 100px;
+  }
   
   #page-footer p {
     margin: 25px 0px 0px 25px;
@@ -557,11 +572,11 @@ body {
   
   }
   #page-footer ul {
-    margin: 15px 25px 0px 0px;
+    margin: 45px 25px 0px 20px;
     padding: 0;
   }
   #page-footer li {
-    float: right;
+    float: left;
     display: inline;
     padding: 2px;
     margin-bottom: 0px;
