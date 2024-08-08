@@ -15,7 +15,7 @@
   font-weight: 400;
 
   color-scheme: light dark;
-  background-color: #242424;
+  background-color: rgb(13, 11, 56);
 
   font-synthesis: none;
   text-rendering: optimizeLegibility;
@@ -23,7 +23,7 @@
   -moz-osx-font-smoothing: grayscale;
   -webkit-text-size-adjust: 100%;
 
-  --dark-bg: rgb(21,28,37,.85);
+  --dark-bg: rgba(22, 21, 37, 0.85);
   --color-light1: rgba(252,110,144,255);
   --color-light2: rgba(254,224,140,255);
   --color-light3: rgba(254,224,140,255);
@@ -179,26 +179,27 @@ body {
     color: black;
   }
   
+  /* Hamburger Menu */
   nav #ham {
     display: none;
     position: relative;
     top: 13%;
-    height: 40px;
+    height: 50px;
     width: 50px;
     float: right;
+    margin-left: auto;
     margin-right: 10px;
   }
   
-  /* Hamburger lines */
   #ham span {
-    height: 4px;
-    width: 75%;
+    height: 5px;
+    width: 100%;
     background-color: var(--text-color);
     border-radius: 25px;
     position: absolute;
     top: 50%;
-    left: 0%;
-    transform: translate (-50%, -50%);
+    left: 50%;
+    transform: translate(-50%, -50%);
     transition: .3s ease;
   }
   
@@ -216,14 +217,14 @@ body {
   /* Ham Menu Animations */
   #ham.active span:nth-child(1) {
     top: 50%;
-    transform: translate (-50%, -50%) rotate(45%);
+    transform: translate(-50%, -50%) rotate(45deg);
   }
   #ham.active span:nth-child(2) {
-    display: none;
+    opacity: 0%;
   }
   #ham.active span:nth-child(3) {
-    top: 50%;
-    transform: translate (-50%, 50%) rotate(45%);
+    top: 40%;
+    transform: translate(-50%, 50%) rotate(-45deg);
   }
 
   /* Off Screen Menu */
@@ -239,7 +240,7 @@ body {
     justify-content: center;
     align-items: center;
     text-align: center;
-    font-size: 3rem;
+    font-size: 2.5rem;
     transition: .3s ease;
     z-index: -1;
   }
@@ -467,41 +468,6 @@ body {
   /*/ End of Footer /*/
   
   
-  /* Scroll Button /*/
-  #myBtn {
-    /*display: none;  Hidden by default */
-    position: fixed; /* Fixed/sticky position */
-    height: 25px;
-    width: 25px;
-    bottom: 18px; /* Place the button at the bottom of the page */
-    right: 18px; /* Place the button 30px from the right */
-    z-index: 99; /* Make sure it does not overlap */
-    background-color: red; /* Set a background color */
-    cursor: pointer; /* Add a mouse pointer on hover */
-    padding: 10px; /* Some padding */
-    border-radius: 10px; /* Rounded corners */
-  }
-  
-  #myBtn:hover {
-    background-color: white;
-    color: black; /* Add a dark-grey background on hover */
-  }
-
-  .arrow {
-    margin: 0 auto;
-    width: 0; 
-    height: 0; 
-    border-left: 10px solid transparent;
-    border-right: 10px solid transparent;
-    
-    border-bottom: 10px solid var(--text-color);
-  }
-  .arrow:hover {
-    -webkit-filter: invert(1);
-    filter: invert(1);
-  }
-/*/ End of Scroll Button /*/
-  
   
 @keyframes fadeIn {
   0% { opacity: 0; }
@@ -645,11 +611,4 @@ body {
     
   }
 
-    #myBtn {
-      display: none;
-    }
-    .arrow {
-      display: none;
-    }
-    
 }
