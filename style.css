@@ -14,24 +14,20 @@
   line-height: 1.5;
   font-weight: 400;
 
-  color-scheme: light dark;
-  background-color: rgb(13, 11, 56);
-
   font-synthesis: none;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   -webkit-text-size-adjust: 100%;
 
-  --dark-bg: rgba(22, 21, 37, 0.85);
-  --color-light1: rgba(252,110,144,255);
-  --color-light2: rgba(254,224,140,255);
-  --color-light3: rgba(254,224,140,255);
-  --color-medium: rgba(7,4,64,255);
-  --color-dark: rgba(7,4,64,255);
-  --color-pink: rgb;
-  --text-color: rgb(255,255,255);
-  --button-color: rgb(102, 0, 104);
+  --dark-bg: rgba(16, 19, 51, 0.85);
+  --color-light: rgb(14, 23, 125);
+  --color-medium: rgba(25, 29, 76, 1);
+  --color-dark: rgb(16, 14, 28);
+  --text-color: rgb(218, 221, 255);
+  --button-color: rgb(14, 23, 125);
+
+  background-color: var(--color-dark);
 }
 
  /* All Links */
@@ -83,14 +79,6 @@ body {
   }
   
 
-
-  img.placeholder-pic {
-    padding: 25px;
-    width: 400px;
-    height: 550px;
-  
-  }
-  
   
   section {
     display: grid;
@@ -110,7 +98,7 @@ body {
     width: 100%;
     max-width: 1000px;
     z-index: 1;
-    border: 1px solid;
+    border: 1px solid var(--text-color);
     box-shadow: 0px 4px 8px 0 rgba(0, 0, 0, 0.75), 0 6px 20px 0 rgba(0, 0, 0, 0.75);
   }
   
@@ -143,7 +131,7 @@ body {
   nav img {
     width: 50px;
     height: 50px;
-    margin: 3px 5px 0px 5px;
+    margin: 3px 5px 0px 10px;
   }
   
   /* Title text */
@@ -152,7 +140,7 @@ body {
     font-family: "Lucida Console", monospace;
     padding: 0px;
     margin: 0px;
-    top: 15px;
+    top: 12px;
     font-size: x-large;
     text-wrap: wrap;
   }
@@ -162,7 +150,7 @@ body {
     font-family: "Lucida Console", monospace;
     float: right;
     text-align: center;
-    padding: 20px 16px;
+    padding: 17px 16px;
     text-decoration: none;
     font-size: 17px;
   }
@@ -256,8 +244,8 @@ body {
   
   /* Top Section */
 #name {
-    padding-top: 200px;
-    padding-bottom: 100px;
+    padding-top: 180px;
+    padding-bottom: 80px;
   }
 
   #name-box  {
@@ -288,11 +276,19 @@ body {
     filter: invert(1);
     animation: moveUpDown 1s linear infinite;
     animation-duration: 1.2s;
+    margin-bottom: 100px;
+  }
+
+  a.chev-link {
+    display: block;
+    height: 100%;
+    width: 100%;
+    text-decoration: none;
   }
   
   /* About Section */
   #about {
-    padding-top: 250px;
+    padding-top: 125px;
     padding-bottom: 100px;
   }
 
@@ -398,7 +394,7 @@ body {
   
   /* Contact Section */
   #contact {
-    padding-top: 200px;
+    padding-top: 100px;
     padding-bottom: 200px;
   }
   
@@ -433,7 +429,7 @@ body {
     border-radius: 0;
     padding: 0px;
     width: 100%;
-    background-color: rgb(21,28,37);
+    background-color: var(--dark-bg);
     height: 75px;
     max-width: 100%;
     z-index: 2;
@@ -500,7 +496,7 @@ body {
 }
   
 /*/ Small Screen View /*/
-@media only screen and (max-width: 1075px) {
+@media only screen and (max-width: 1150px) {
   /* Swtich to 2 columns of Project Boxes */
   .grid-container#projects {
     grid-template-columns: auto auto;
