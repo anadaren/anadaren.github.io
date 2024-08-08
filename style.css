@@ -208,7 +208,12 @@ body {
   #ham span:nth-child(3) {
     top: 75%;
   }
-  
+
+  #ham:hover{
+    cursor: pointer;
+  }
+
+  /* Ham Menu Animations */
   #ham.active span:nth-child(1) {
     top: 50%;
     transform: translate (-50%, -50%) rotate(45%);
@@ -226,10 +231,9 @@ body {
     background-color: var(--dark-bg);
     height: 100vh;
     width: 100%;
-    max-width: 450px;
     position: fixed;
     top: 0;
-    right: -450px;
+    right: -100%;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -237,9 +241,13 @@ body {
     text-align: center;
     font-size: 3rem;
     transition: .3s ease;
+    z-index: -1;
   }
   .off-screen-menu.active {
     right: 0;
+  }
+  .off-screen-menu ul {
+    list-style-type: none;
   }
 
   /*/ End of Navigation Bar /*/
@@ -247,8 +255,8 @@ body {
   
   /* Top Section */
 #name {
-    padding-top: 250px;
-    padding-bottom: 250px;
+    padding-top: 200px;
+    padding-bottom: 100px;
   }
 
   #name-box  {
@@ -269,10 +277,21 @@ body {
     color: black;
   }
 
+
+  .chevron {
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Cpath d='M8 13.1l-8-8 2.1-2.2 5.9 5.9 5.9-5.9 2.1 2.2z'/%3E%3C/svg%3E");
+    height: 40px;
+    width: 40px;
+    margin-left: 48%;
+    -webkit-filter: invert(1);
+    filter: invert(1);
+    animation: moveUpDown 1s linear infinite;
+    animation-duration: 1.2s;
+  }
   
   /* About Section */
   #about {
-    padding-top: 150px;
+    padding-top: 250px;
     padding-bottom: 100px;
   }
 
@@ -311,10 +330,7 @@ body {
     z-index: 1;
     position: relative;
     text-align: center;
-
-    /*animation: fadeIn 1s linear forwards;
-    transition: 0.3s;
-    text-shadow: 0px 0px 15px rgb(0, 0, 0, 0.75);*/
+    text-shadow: 0px 0px 15px rgb(0, 0, 0, 0.75);
   }
   
   hr.proj-line {
@@ -491,8 +507,7 @@ body {
   0% { opacity: 0; }
   100% { opacity: 1; }
 }
-  
-  
+
 @keyframes fadeUp {
   0% { margin-top: 25%;
       height: 300%;
@@ -502,9 +517,17 @@ body {
       opacity: 1; }
 }
 
+@keyframes moveUpDown {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(10px);
+  }
+}
+
 
 @media(prefers-reduced-motion) {
-
   .hidden {
     transition: none;
   }

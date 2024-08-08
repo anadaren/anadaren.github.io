@@ -39,7 +39,7 @@
       <a href="#about" class="navlink">About</a>
       
       <!--Hamburger for Mobile Viewers-->
-      <div id="ham">
+      <div id="ham" onclick="hamMenu()">
         <span></span>
         <span></span>
         <span></span>
@@ -48,9 +48,9 @@
       <!--Hamburger Menu-->
       <div class="off-screen-menu">
           <ul>
-            <li><a href="#about" class="navlink">About</a></a></li>
-            <li><a href="#projects" class="navlink">Projects</a></li>
-            <li><a href="#contact" class="navlink">Contact</a></li>
+            <li><a href="#about" onclick="hamMenu()">About</a></li>
+            <li><a href="#projects" onclick="hamMenu()">Projects</a></li>
+            <li><a href="#contact" onclick="hamMenu()">Contact</a></li>
           </ul>
       </div>
 
@@ -73,8 +73,12 @@
             <a href="mailto:ana.daren.green@gmail.com" class="button-style">✉️ Say hi!</a>
             </header> 
           </div>
+
+          
       </section>
       <!--End of Top Section-->
+
+      <div class="chevron"></div>
 
       <!--About Section-->
       <section id="about" class="hidden">
@@ -100,7 +104,7 @@
                   <li>Three.js</li>
                   <li>C/C++</li>
                 </ul>
-                 
+
             <br><a href="#projects" class="button-style">View My Work</a></p>
           </div>
 

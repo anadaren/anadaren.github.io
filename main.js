@@ -15,13 +15,13 @@ hiddenElements.forEach((el) => observer.observe(el));
 
 
 /* Mobile Hamburger Menu */
-const hamMenu = document.querySelector('.ham');
-const offScreenMenu = document.querySelector('.off-screen-menu');
+function hamMenu() {
+  const hamMenu = document.querySelector('.ham');
+  const offScreenMenu = document.querySelector('.off-screen-menu');
 
-hamMenu.addEventListener('click', () => {
   hamMenu.classList.toggle('active');
   offScreenMenu.classList.toggle('active');
-})
+}
 
 
 /* Scroll to top button */
@@ -45,3 +45,37 @@ function topFunction() {
   document.body.scrollTop = 0; // For Safari
   document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
 } 
+
+/* End of Scroll Button */
+
+
+/*
+import { setupCounter } from './counter.js'
+
+document.querySelector('#app').innerHTML = `
+  <div>
+    <div class="card">
+      <button id="counter" type="button"></button>
+    </div>
+    
+  </div>
+`
+setupCounter(document.querySelector('#counter'))
+
+
+
+
+
+// Copy Email Button
+const emailAdd = "ana.daren.green@gmail.com"
+function copyEmail() {
+  // Get the text field
+  var copyText = emailAdd;
+   // Copy the text inside the text field
+  navigator.clipboard.writeText(emailAdd);
+
+  // Alert the copied text
+  alert("Copied the text: " + emailAdd);
+} 
+
+*/
