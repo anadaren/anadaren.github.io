@@ -13,6 +13,7 @@
   font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
   line-height: 1.5;
   font-weight: 400;
+  scroll-behavior: smooth;
 
   font-synthesis: none;
   text-rendering: optimizeLegibility;
@@ -617,4 +618,98 @@ body {
     
   }
 
+}
+
+/* Games Page */
+
+.grid-container#games {
+  grid-template-columns: auto auto;
+  margin: 0px 0px 0px 0px;
+}
+
+.game-box {
+  background: var(--dark-bg);
+  position: relative;
+  height: 250px;
+  width: 75%;
+  border-radius: 25px;
+  font-size: 1rem;
+  margin-top: 30px;
+  margin-bottom: 30px;
+  margin-left: auto;
+  margin-right: auto;
+  border: 1px solid;
+  padding: 30px;
+  text-align: center;
+  /*animation: fadeIn 1s linear forwards;*/
+  
+  transition: 0.3s;
+  z-index: 1;
+  box-shadow: 0px 4px 8px 0 rgba(0, 0, 0, 0.75), 0 6px 20px 0 rgba(0, 0, 0, 0.75);
+}
+
+.game-box:hover {
+  cursor: pointer;
+  box-shadow: 0px 4px 8px 0 rgba(255, 255, 255, 0.75), 0 6px 20px 0 rgba(255, 255, 255, 0.75);
+}
+
+.game-box img {
+  width: 350px;
+  height: 250px;
+  border-radius: 25px;
+  transition: 0.3s;
+}
+
+.game-box h2 {
+  margin: 0;
+  font-size: 2rem;
+}
+
+.game-box p {
+  font-size: .85rem;
+}
+
+/* Game Page Mobile */
+@media only screen and (max-width: 950px) {
+  .grid-container#games {
+    grid-template-columns: auto;
+    margin: 0px 0px 0px 0px;
+    outline: 2px solid red;
+    gap: 0;
+  }
+
+  .game-box {
+    background: var(--dark-bg);
+    position: relative;
+    height: 375px;
+    width: 300px;
+    border-radius: 25px;
+    font-size: 1rem;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    border: 1px solid;
+    padding: 10px;
+    text-align: center;
+    /*animation: fadeIn 1s linear forwards;*/
+    
+    transition: 0.3s;
+    z-index: 1;
+    box-shadow: 0px 4px 8px 0 rgba(0, 0, 0, 0.75), 0 6px 20px 0 rgba(0, 0, 0, 0.75);
+  }
+
+  .game-box img {
+    width: 300px;
+    height: 200px;
+    border-radius: 25px;
+    transition: 0.3s;
+
+  }
+
+  .game-box h2 {
+    font-size: 1.5rem;
+  }
+
+  .game-box p {
+    font-size: .75rem;
+  }
 }
