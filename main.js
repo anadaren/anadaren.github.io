@@ -16,9 +16,15 @@ hiddenElements.forEach((el) => observer.observe(el));
 
 /* Mobile Hamburger Menu */
 const hamMenu = document.querySelector('#ham');
+const hamElements = document.querySelector('.off-screen-menu ul');
 const offScreenMenu = document.querySelector('.off-screen-menu');
 
 hamMenu.addEventListener('click',()=> {
   hamMenu.classList.toggle('active');
   offScreenMenu.classList.toggle('active');
-})
+});
+
+hamElements.addEventListener('click', () => {
+  hamMenu.classList.toggle('active');
+  offScreenMenu.classList.toggle('active');
+});

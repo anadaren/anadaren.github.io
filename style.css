@@ -133,7 +133,7 @@ body {
   nav img {
     width: 50px;
     height: 50px;
-    margin: 3px 5px 0px 10px;
+    margin: 3px 8px 0px 12px;
   }
   
   /* Title text */
@@ -569,7 +569,7 @@ body {
 
   /* Mobile Top Section */
   #name-box {
-    max-width: 300px;
+    max-width: 350px;
     margin-left: 0;
   }
   
