@@ -13,9 +13,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta property="og:image" content="images/space.jpg">
 
-    <link rel="icon" type="image/svg+xml" href="/Images/favicon.png?" />
-    <link rel="stylesheet" href="/style.css">
-    <script defer src="main.js"></script>
+    <link rel="icon" type="image/svg+xml" href="/images/favicon.png?" />
+    <link rel="stylesheet" href="/src/style.css">
+    <script defer src="/src/main.js"></script>
 
  
    
@@ -25,9 +25,8 @@
 
   <body>
    <!--Navigation Bar-->
-   <script id="replace_with_navbar" src="navbar.js"></script>
-
-
+   <script id="replace_with_navbar" src="/src/navbar.js"></script>
+   
       <!--Top Section-->
       <section id="name" class="hidden">
           <div class="section-box" id="name-box">
@@ -56,7 +55,7 @@
               <h1>About Me</h1>
             </div>
 
-            <p>Hi, I'm Ana! I'm an aspiring front-end developer and visual designer 
+            <p>Hi, I'm Ana! I'm an aspiring developer and visual designer 
                 currently based in Brooklyn, New York. I love designing projects that sit at the 
                 intersecion of the creative and the technical. I'm passionate about solving puzzles, 
                 designing interactive experiences, and bringing digital worlds to life!
@@ -65,12 +64,13 @@
                 <ul>
                   <li>JavaScript</li>
                   <li>HTML/CSS</li>
-                  <li>C#</li>
-                  <li>Unity</li>
                   <li>MERN Stack</li>
                   <li>Three.js</li>
-                  <li>C/C++</li>
+                  
+                  <li>Unity</li>
+                  <li>C#</li>
                   <li>Unreal Engine 5</li>
+                  <li>C/C++</li>
                 </ul>
 
             <br><a href="#projects" class="button-style">View My Work</a></p>
@@ -92,13 +92,14 @@
 
           <!--Project 1-->
           <div class="project-box">
-            <a href="https://github.com/anadaren/fish-blog" class="proj-link" alt="fish blog">
+            <a href="https://github.com/anadaren/sudoku/" class="proj-link" alt="sudoku">
             <div>
               <img src="images/projectPics/project1.png">
             </div>
             <div>
-              <h2>Project 1</h2>
-            <p>Project 1.</p>
+              <h2>Sudoku App</h2>
+            <p>Simple sudoku app made with React.</p>
+            <div class="tags">HTML/CSS, Javascript, React</div>
             </div>
           </a>
           </div>
@@ -123,7 +124,7 @@
 
           <!--Project 3-->
           <div class="project-box">
-            <a href="./games.html" class="proj-link" alt="games page">
+            <a href="/src/games.html" class="proj-link" alt="games page">
             <div>
               <img src="images/projectPics/gamestudio.png">
             </div>
@@ -165,16 +166,7 @@
 
 
       <!--Footer-->
-      <section id="footer">
-        <div id="page-footer">
-          <p>©2024 Built and Designed by Anastasia Green</p>
-          <ul>
-            <li><a href="https://www.linkedin.com/in/anastasia-green/"><img src="images/icons/linkedin.png" alt="LinkedIn" style="width:36px;height:36px;"></a></li>
-            <li><a href="https://github.com/anadaren"><img src="images/icons/github.png" alt="GitHub" style="width:36px;height:36px;"></a></li>
-            <li><a href="mailto:ana.daren.green@gmail.com"><img src="images/icons/email.png" alt="Email" style="width:36px;height:36px;"></a></li>
-          </ul>
-        </div>
-      </section>
+      <script id="replace_with_footer" src="/src/footer.js"></script>
       <!--End of Footer-->
 
   </body>

@@ -30,6 +30,8 @@
   --button-color: rgb(14, 23, 125);
 
   background-color: var(--color-dark);
+  /*background:radial-gradient(200% 105% at top center,#1B2947 10%,#000033 40%,#002865 75%,#0060e6);
+  */
 }
 
  /* All Links */
@@ -322,11 +324,12 @@ body {
   
   /* Projects Section */
   #projects {
-    padding-top: 100px;
+    padding-top: 50px;
     padding-bottom: 100px;
   }
   
   #proj-top {
+    padding-top: 50px;
     font-size: 1.25rem;
     z-index: 1;
     position: relative;
