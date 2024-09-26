@@ -21,13 +21,15 @@
   -moz-osx-font-smoothing: grayscale;
   -webkit-text-size-adjust: 100%;
 
-  --dark-bg: rgba(16, 19, 51, 0.85);
-  --color-light: rgb(83, 91, 242);
-  --color-light2: rgb(14, 23, 125);
-  --color-medium: rgba(25, 29, 76, 1);
-  --color-dark: rgb(16, 14, 28);
+  --link-color: rgb(83, 91, 242);
+  --color-light: rgb(218, 221, 255);
+  --color-medium: rgba(25, 29, 76, 0.85);
+  --color-dark: rgb(16, 19, 51);
   --text-color: rgb(218, 221, 255);
   --button-color: rgb(14, 23, 125);
+
+  --box-shadow: rgba(0, 0, 0, 0.75);
+  --box-hover: rgba(255, 255, 255, 0.75);
 
   background-color: var(--color-dark);
   /*background:radial-gradient(200% 105% at top center,#1B2947 10%,#000033 40%,#002865 75%,#0060e6);
@@ -41,7 +43,7 @@ a {
   text-decoration: inherit;
 }
 a:hover {
-  color: var(--color-light);
+  color: var(--link-color);
 }
 
 body {
@@ -92,7 +94,7 @@ body {
   }
   
   .section-box {
-    background: var(--dark-bg);
+    background: var(--color-medium);
     position: static;
     font-size: 1rem;
     margin: 0;
@@ -102,7 +104,7 @@ body {
     width: 100%;
     max-width: 1000px;
     z-index: 1;
-    border: 1px solid var(--text-color);
+    border: 1px solid var(--color-light);
     box-shadow: 0px 4px 8px 0 rgba(0, 0, 0, 0.75), 0 6px 20px 0 rgba(0, 0, 0, 0.75);
   }
   
@@ -110,8 +112,8 @@ body {
     display: grid;
     justify-content: space-evenly;
     grid-template-columns: auto auto;
-    margin-left: 75px;
-    margin-right: 75px;
+    margin-left: 50px;
+    margin-right: 50px;
     gap: 50px;
     align-content: center;
   }
@@ -120,7 +122,7 @@ body {
   
   /* Add a background to the top navigation */
   nav {
-    background: var(--dark-bg);
+    background: var(--color-medium);
     position: fixed;
     top: 0;
     height: 60px;
@@ -161,15 +163,10 @@ body {
   
   /* Page Link Hover */
   nav .navlink:hover {
-    background-color: var(--text-color);
+    background-color: var(--color-light);
     color: black;
   }
-  
-  /* Active/Current Link */
-  nav .navlink.active {
-    background-color: var(--text-color);
-    color: black;
-  }
+
   
   /* Hamburger Menu */
   nav #ham {
@@ -186,7 +183,7 @@ body {
   #ham span {
     height: 5px;
     width: 100%;
-    background-color: var(--text-color);
+    background-color: var(--color-light);
     border-radius: 25px;
     position: absolute;
     top: 50%;
@@ -221,7 +218,7 @@ body {
 
   /* Off Screen Menu */
   .off-screen-menu {
-    background-color: var(--dark-bg);
+    background-color: var(--color-medium);
     height: 100vh;
     width: 100%;
     position: fixed;
@@ -254,19 +251,18 @@ body {
 
   #name-box  {
     max-width: 30rem;
-    margin-left: 75px;
+    margin-left: 10%;
     min-height: 15rem;
   }
   
   .button-style {
     position: static;
     background: var(--button-color);
-    color: var(--text-color);
     padding: 15px;
     border-radius: 15px;
   }
   .button-style:hover {
-    background: var(--text-color);
+    background: var(--color-light);
     color: black;
   }
 
@@ -298,12 +294,14 @@ body {
   }
 
   .grid-container#about-content {
-    gap: 0px;
+    display: flex;
+    gap: 25px;
   }
 
   #about-img {
-    height: auto;
-    width: 85%;
+    border: 1px solid var(--color-light);
+    box-shadow: 0px 4px 8px 0 var(--box-shadow), 0 6px 20px 0 var(--box-shadow);
+    max-height: 500px;
   }
 
   #about-box {
@@ -340,7 +338,7 @@ body {
   hr.proj-line {
     position: relative;
     text-align: center;
-    border: 3px solid var(--text-color);
+    border: 3px solid var(--color-light);
     border-radius: 5px;
     width: 15%;
     box-shadow: 0px 0px 15px rgb(0, 0, 0, 0.75);
@@ -348,7 +346,7 @@ body {
 
   .grid-container#projects {
     grid-template-columns: auto auto auto;
-    margin: 0px 50px 0px 50px;
+    margin: 0px 75px 0px 75px;
   }
 
   .grid-container#projects:nth-child(2) {
@@ -359,7 +357,7 @@ body {
    }
   
   .project-box {
-    background: var(--dark-bg);
+    background: var(--color-medium);
     position: relative;
     height: 425px;
     width: 300px;
@@ -367,19 +365,19 @@ body {
     font-size: 1rem;
     margin-top: 20px;
     margin-bottom: 20px;
-    border: 1px solid;
+    border: 1px solid var(--color-light);
     padding: 10px;
     text-align: center;
     /*animation: fadeIn 1s linear forwards;*/
     
     transition: 0.3s;
     z-index: 1;
-    box-shadow: 0px 4px 8px 0 rgba(0, 0, 0, 0.75), 0 6px 20px 0 rgba(0, 0, 0, 0.75);
+    box-shadow: 0px 4px 8px 0 var(--box-shadow), 0 6px 20px 0 var(--box-shadow);
   }
   
   .project-box:hover {
     cursor: pointer;
-    box-shadow: 0px 4px 8px 0 rgba(255, 255, 255, 0.75), 0 6px 20px 0 rgba(255, 255, 255, 0.75);
+    box-shadow: 0px 4px 8px 0 var(--box-hover), 0 6px 20px 0 var(--box-hover);
   }
   
   .project-box img {
@@ -407,7 +405,7 @@ body {
   .tags {
     width: auto;
     background: var(--button-color);
-    color: var(--text-color);
+    color: var(--color-light);
     border-radius: 15px;
     font-size: .75rem;
   }
@@ -424,7 +422,7 @@ body {
   #contact-box {
     position: relative;
     max-width: 30rem;
-    margin-left: 100px;
+    margin-left: 10%;
     
   }
   
@@ -439,6 +437,8 @@ body {
   #contact-box img:hover {
     opacity: .95;
   }
+
+ 
   
   
   /*/ Footer /*/
@@ -452,7 +452,7 @@ body {
     border-radius: 0;
     padding: 0px;
     width: 100%;
-    background-color: var(--dark-bg);
+    background-color: var(--color-medium);
     height: 75px;
     max-width: 100%;
     z-index: 2;
@@ -527,7 +527,7 @@ body {
   }
 }
 
-/*/ Semi-Mobile View /*/
+/*/ Small Screen View /*/
 @media only screen and (max-width: 850px) {
   /* Mobile Top Section */
   #name {
@@ -542,15 +542,21 @@ body {
 
   /* Stack image above text */
   .grid-container#about-content {
+    display: grid;
     grid-template-columns: auto;
     place-items: center;
   }
 
   #about-img {
-    padding-bottom: 50px;
+    margin-bottom: 50px;
   }
 
   /* Mobile Contact Section */
+  .grid-container#contact-container {
+    display: grid;
+    grid-template-columns: auto;
+  }
+
   #contact {
     place-items: center;
   }
@@ -562,7 +568,7 @@ body {
 }
 
 /*/ Mobile View /*/
-@media only screen and (max-width: 650px) {
+@media only screen and (max-width: 750px) {
   /*/ Navigation Bar Switch to Hamberger View/*/
   nav .navlink {
     display: none;
@@ -584,7 +590,7 @@ body {
   }
   
   .project-box {
-    background: var(--dark-bg);
+    background: var(--color-medium);
     position: relative;
     min-height: 425px;
     height: auto;

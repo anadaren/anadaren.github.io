@@ -25,7 +25,7 @@
 
   <body>
    <!--Navigation Bar-->
-   <script id="replace_with_navbar" src="/src/navbar.js"></script>
+   <script id="replace_with_navbar" src="/src/components/navbar.js"></script>
    
       <!--Top Section-->
       <section id="name" class="hidden">
@@ -82,91 +82,35 @@
 
       
       <!--Project Section-->
-      <section id="projects" class="hidden">
-        <div id="proj-top">
-          <h1>Projects</h1>
-          <hr class="proj-line">
-        </div>
-
-        <div class="grid-container" id="projects">
-
-          <!--Project 1-->
-          <div class="project-box">
-            <a href="https://github.com/anadaren/sudoku/" class="proj-link" alt="sudoku">
-            <div>
-              <img src="images/projectPics/project1.png">
-            </div>
-            <div>
-              <h2>Sudoku App</h2>
-            <p>Simple sudoku app made with React.</p>
-            <div class="tags">HTML/CSS, Javascript, React</div>
-            </div>
-          </a>
-          </div>
-          <!--End of Project 1-->
-
-
-          <!--Project 2-->
-          <div class="project-box">
-            <a href="https://github.com/anadaren/fish-blog" class="proj-link" alt="fish blog">
-            <div>
-              <img src="images/projectPics/project2.png">
-            </div>
-            <div>
-              <h2>Fish Themed Blogging Website</h2>
-            <p>A blogging website for people to post about fish and fish related topics.</p>
-            <div class="tags">HTML/CSS, Node.js, Express.js, MongoDB</div>
-          </div>
-        </a>
-        </div>
-          <!--End of Project 2-->
-
-
-          <!--Project 3-->
-          <div class="project-box">
-            <a href="/src/games.html" class="proj-link" alt="games page">
-            <div>
-              <img src="images/projectPics/gamestudio.png">
-            </div>
-            <div>
-              <h2>Game Design</h2>
-            <p>A collection of all of my game design projects, created in Unity, Unreal Engine, and more.</p>
-            <div class="tags">Unity, C#, Blender, Lua</div>
-          </div>
-          </a>
-          </div>
-          <!--End of Project 3-->
-
-        </div>
-
-
-      </section>
+      <script id="replace_with_projects" src="/src/components/projects.js"></script>
       <!--End of Project Section-->
 
       <!--Contact Section-->
       <section id="contact" class="hidden">
+       
+          <div class="section-box" id="contact-box">
+            <h1>Contact</h1>
+            <p>Want to talk? Email me at:</p>
+            <p>ana.daren.green@gmail.com</p>
 
-        <div class="section-box" id="contact-box">
-          <h1>Contact</h1>
-          <p>Want to talk? Email me at:</p>
-          <p>ana.daren.green@gmail.com</p>
+            <a href="https://www.linkedin.com/in/anastasia-green/"><img src="/images/icons/linkedin.png"></a>
 
-          <a href="https://www.linkedin.com/in/anastasia-green/"><img src="/images/icons/linkedin.png"></a>
+            <a href="https://anadaren.itch.io/"><img src="/images/icons/itch.png"></a>
 
-          <a href="https://anadaren.itch.io/"><img src="/images/icons/itch.png"></a>
+            <a href="https://github.com/anadaren"><img src="/images/icons/github.png"></a>
 
-          <a href="https://github.com/anadaren"><img src="/images/icons/github.png"></a>
+            <a href="https://www.youtube.com/@anagreen3416"><img src="/images/icons/youtube.png"></a>
 
-          <a href="https://www.youtube.com/@anagreen3416"><img src="/images/icons/youtube.png"></a>
-
-          <a href="https://x.com/galaxysnapback"><img src="/images/icons/twitter.png"></a>
+            <a href="https://x.com/galaxysnapback"><img src="/images/icons/twitter.png"></a>
+          
+          
         </div>
       </section>
       <!--End of Contact Section-->
 
 
       <!--Footer-->
-      <script id="replace_with_footer" src="/src/footer.js"></script>
+      <script id="replace_with_footer" src="/src/components/footer.js"></script>
       <!--End of Footer-->
 
   </body>
