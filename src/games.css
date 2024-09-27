@@ -28,7 +28,7 @@
   
   .game-box:hover {
     cursor: pointer;
-    box-shadow: 0px 4px 8px 0 rgba(255, 255, 255, 0.75), 0 6px 20px 0 rgba(255, 255, 255, 0.75);
+    box-shadow: 8px 8px 0px 0 var(--link-color);
   }
   
   .game-box img {
@@ -117,7 +117,7 @@
   
   .weekgame-box:hover {
     cursor: pointer;
-    box-shadow: 0px 4px 8px 0 var(--box-hover), 0 6px 20px 0 var(--box-hover);
+    box-shadow: 8px 8px 0px 0 var(--link-color);
   }
   
   .weekgame-box img {

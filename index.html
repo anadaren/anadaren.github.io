@@ -31,7 +31,7 @@
       <section id="name" class="hidden">
           <div class="section-box" id="name-box">
             <header>
-            <h1>Hi, I'm Ana! 🚀</h1>
+            <h1 id="name-text">Hi, I'm Ana! 🚀</h1>
             <p>Designer & Developer & Fun Stuff Enthusiast</p>
             <p>I make games, websites, XR projects, and more!</p>
             <br>
@@ -105,11 +105,11 @@
           </div>
 
           <div class="contact-form">
-            <form>
-              <input type="text" id="contact-element" name="name" placeholder="Name"><br>
-              <input type="text" id="contact-element" name="email" placeholder="Email"><br>
+            <form id="form" action="sendmail.php" method="POST">
+              <input type="text" id="contact-element" name="name" placeholder="Name" required><br>
+              <input type="text" id="contact-element" name="email" placeholder="Email" required><br>
               <input type="text" id="contact-element" name="subject" placeholder="Subject"><br>
-              <textarea id="message" name="message" placeholder="Message"></textarea>
+              <textarea id="message" name="message" placeholder="Message" required></textarea>
               <br>
               <input type="submit" id="submit" name="submit" value="Submit">
             </form>

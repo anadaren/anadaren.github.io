@@ -64,15 +64,6 @@ body {
   text-align: center;
 }
 
-.hidden {
-  opacity: 0;
-  transition: all 1s;
-}
-.show {
-  opacity: 1;
-}
-
-
   h1 {
     font-size: 2em;
     line-height: 1.1;
@@ -244,19 +235,27 @@ body {
   
   
   /* Top Section */
+  #name-text {
+    font-size: 2.5em;
+  }
+
 #name {
     padding-top: 180px;
     padding-bottom: 80px;
   }
 
   #name-box  {
+    display: flex;
     max-width: 30rem;
     margin-left: 10%;
     min-height: 15rem;
   }
+
+  header {
+    margin-bottom: 1.5rem;
+  }
   
   .button-style {
-    position: static;
     background: var(--button-color);
     padding: 15px;
     border-radius: 15px;
@@ -273,6 +272,7 @@ body {
     width: 40px;
     opacity: 75%;
     margin-left: 48%;
+    
     -webkit-filter: invert(1);
     filter: invert(1);
     animation: moveUpDown 1s linear infinite;
@@ -303,10 +303,12 @@ body {
     border: 1px solid var(--color-light);
     box-shadow: 0px 4px 8px 0 var(--box-shadow), 0 6px 20px 0 var(--box-shadow);
     max-height: 500px;
+    animation: moveRight 1s ease;
   }
 
   #about-box {
     max-width: 650px;
+    animation: moveLeft 1s ease;
   }
 
   #about-box ul {
@@ -345,6 +347,24 @@ body {
     box-shadow: 0px 0px 15px rgb(0, 0, 0, 0.75);
   }
 
+  .proj-category {
+
+  }
+
+
+  .proj-category h1 {
+    margin-left: 25rem;
+    font-weight: 500;
+  }
+
+  .proj-category hr {
+    position: relative;
+    border: 1px solid var(--color-light);
+    border-radius: 5px;
+    width: 25%;
+    box-shadow: 0px 0px 15px rgb(0, 0, 0, 0.75);
+  }
+
   .grid-container#projects {
     grid-template-columns: auto auto auto;
     margin: 0px 75px 0px 75px;
@@ -378,7 +398,8 @@ body {
   
   .project-box:hover {
     cursor: pointer;
-    box-shadow: 0px 4px 8px 0 var(--box-hover), 0 6px 20px 0 var(--box-hover);
+    box-shadow: 8px 8px 0px 0 var(--link-color);
+    animation: hoverAnim .25s forwards;
   }
   
   .project-box img {
@@ -449,6 +470,7 @@ body {
     width: 100%;
     padding: 12px;
     border-radius: 5px;
+    max-width: 600px;
   }
 
   .contact-form #contact-element {
@@ -484,13 +506,13 @@ body {
   }
   
   
-  /*/ Footer /*/
+/*/ Footer /*/
 
-  #footer {
+#footer {
     min-height: 0;
-  }
+}
   
-  #page-footer {
+#page-footer {
     position: absolute;
     border-radius: 0;
     padding: 0px;
@@ -499,21 +521,21 @@ body {
     height: 75px;
     max-width: 100%;
     z-index: 2;
-  }
+}
   
-  #page-footer p {
+#page-footer p {
     float: left;
     font-family: "Lucida Console", monospace;
     margin: 25px 0px 0px 75px;
     font-size: 1rem;
-  }
+}
   
-  #page-footer ul {
+#page-footer ul {
     list-style-type: none;
     margin: 15px 75px 0px 0px;
     padding: 0;
-  }
-  #page-footer li {
+}
+#page-footer li {
     float: right;
     display: inline;
     padding: 2px;
@@ -522,14 +544,33 @@ body {
     -webkit-filter: invert(1);
      filter: invert(1);
      opacity: .75;
-  }
+}
 
-  #page-footer li:hover {
+#page-footer li:hover {
     opacity: .95;
+}
+/*/ End of Footer /*/
+  
+
+/*/ Animation classes /*/
+.hidden {
+  opacity: 0;
+  transition: all 1s;
+}
+.show {
+  opacity: 1;
+}
+
+@media(prefers-reduced-motion) {
+  .hidden {
+    transition: none;
   }
-  /*/ End of Footer /*/
-  
-  
+}
+
+@keyframes hoverAnim {
+  0% { transform: translateY(0%); }
+  100% { transform: translateY(-2%); }
+}
   
 @keyframes fadeIn {
   0% { opacity: 0; }
@@ -545,6 +586,25 @@ body {
       opacity: 1; }
 }
 
+@keyframes moveRight {
+  0% {
+    transform: translateX(-100%);
+    opacity: 0; }
+100% {
+    transform: translateX(0%);
+    opacity: 1; }
+}
+
+@keyframes moveLeft {
+  0% {
+    transform: translateX(100%);
+    opacity: 0; }
+100% {
+    transform: translateX(0%);
+    opacity: 1; }
+}
+
+
 @keyframes moveUpDown {
   0%, 100% {
     transform: translateY(0);
@@ -554,14 +614,10 @@ body {
   }
 }
 
+/*/ End of animation classes /*/
 
-@media(prefers-reduced-motion) {
-  .hidden {
-    transition: none;
-  }
-}
   
-/*/ Small Screen View /*/
+/*/ Small Screen View 1 /*/
 @media only screen and (max-width: 1150px) {
   /* Swtich to 2 columns of Project Boxes */
   .grid-container#projects {
@@ -570,9 +626,9 @@ body {
   }
 }
 
-/*/ Small Screen View /*/
+/*/ Small Screen View 2 /*/
 @media only screen and (max-width: 850px) {
-  /* Mobile Top Section */
+  /*/ Mobile Top Section /*/
   #name {
     place-items: center;
   }
@@ -581,7 +637,7 @@ body {
   }
 
   
-  /* Mobile About Section */
+  /*/ Mobile About Section /*/
 
   /* Stack image above text */
   .grid-container#about-content {
@@ -593,7 +649,7 @@ body {
     margin: 0;
   }
 
-  /* Mobile Contact Section */
+  /*/ Mobile Contact Section /*/
   .grid-container#contact-container {
     display: grid;
     grid-template-columns: auto;
@@ -609,6 +665,7 @@ body {
 
   .contact-form {
     margin-left: 1rem;
+  
   }
 
 }
@@ -623,15 +680,14 @@ body {
     display: inline;
   }
 
-  /* Mobile Top Section */
+  /*/ Mobile Top Section /*/
   #name-box {
     max-width: 350px;
     margin-left: 0;
   }
-
-
   
   /*/ Mobile Projects Section /*/
+
   /* Swtich Big Project Boxes to Little Project Boxes */
   .grid-container#projects {
     grid-template-columns: auto;
