@@ -33,11 +33,25 @@
             <header>
             <h1 id="name-text">Hi, I'm Ana! 🚀</h1>
             <p>Designer & Developer & Fun Stuff Enthusiast</p>
-            <p>I make games, websites, XR projects, and more!</p>
+            <p>I make <span id='typed-text'></span></p>
             <br>
             <a href="mailto:ana.daren.green@gmail.com" class="button-style">✉️ Say hi!</a>
             </header> 
           </div>
+
+          <!-- Load library from the CDN -->
+  <script src="https://unpkg.com/typed.js@2.1.0/dist/typed.umd.js"></script>
+
+  <!-- Setup and start animation! -->
+  <script>
+    var typed = new Typed('#typed-text', {
+      strings: ['games', 'web apps', 'xr projects', 'art and animation'],
+      typeSpeed: 50,
+      loop: true,
+      backSpeed: 75,
+      backDelay: 1200,
+    });
+  </script>
 
           
       </section>
@@ -55,7 +69,7 @@
               <h1>About Me</h1>
             </div>
 
-            <p>Hi, I'm Ana! I'm an aspiring developer and visual designer 
+            <p>Hi, I'm Ana! I'm an aspiring front end developer and visual designer 
                 currently based in Brooklyn, New York. I love designing projects that sit at the 
                 intersecion of the creative and the technical. I'm passionate about solving puzzles, 
                 designing interactive experiences, and bringing digital worlds to life!
@@ -63,9 +77,9 @@
                 <br><br>Some of the main tools I work with:<br>
                 <ul>
                   <li>JavaScript</li>
+                  <li>React</li>
+                  <li>Node.js</li>
                   <li>HTML/CSS</li>
-                  <li>MERN Stack</li>
-                  <li>Three.js</li>
                   
                   <li>Unity</li>
                   <li>C#</li>
@@ -105,17 +119,42 @@
           </div>
 
           <div class="contact-form">
-            <form id="form" action="sendmail.php" method="POST">
-              <input type="text" id="contact-element" name="name" placeholder="Name" required><br>
-              <input type="text" id="contact-element" name="email" placeholder="Email" required><br>
-              <input type="text" id="contact-element" name="subject" placeholder="Subject"><br>
-              <textarea id="message" name="message" placeholder="Message" required></textarea>
+            <form id="form" onsubmit="sendEmail(); reset(); return false;">
+              <p class="form-label"><label for="name">Name</label></p>
+              <input type="text" id="contact-element" name="name" placeholder="Name..." required><br>
+              <p class="form-label"><label for="email">Email</label></p>
+              <input type="text" id="contact-element" name="email" placeholder="Email..." required><br>
+              <p class="form-label"><label for="subject">Subject</label></p>
+              <input type="text" id="contact-element" name="subject" placeholder="Subject..."><br>
+              <p class="form-label"><label for="message">Message</label></p>
+              <textarea id="message" name="message" placeholder="Message..." required></textarea>
               <br>
-              <input type="submit" id="submit" name="submit" value="Submit">
+              <button type="submit" id="submit" name="submit" value="Submit">Submit</button>
             </form>
+
           </div>
           
         </div>
+
+      <script src="https://smtpjs.com/v3/smtp.js">
+      </script>
+
+      <script>
+        function sendEmail() {
+          Email.send({
+            Host : "smtp.gmail.com",
+            Username : "username",
+            Password : "password",
+            To : 'ana.daren.green@gmail.com',
+            From : document.getElementById("email").value,
+            Subject : document.getElementById("subject").value,
+            Body : document.getElementById("message").value,
+          }).then(
+            message => alert(message)
+          );
+        }
+      </script>
+
       </section>
       <!--End of Contact Section-->
 
