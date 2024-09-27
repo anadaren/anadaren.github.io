@@ -87,7 +87,7 @@
 
       <!--Contact Section-->
       <section id="contact" class="hidden">
-       
+        <div class="grid-container" id="contact-container">
           <div class="section-box" id="contact-box">
             <h1>Contact</h1>
             <p>Want to talk? Email me at:</p>
@@ -102,7 +102,18 @@
             <a href="https://www.youtube.com/@anagreen3416"><img src="/images/icons/youtube.png"></a>
 
             <a href="https://x.com/galaxysnapback"><img src="/images/icons/twitter.png"></a>
-          
+          </div>
+
+          <div class="contact-form">
+            <form>
+              <input type="text" id="contact-element" name="name" placeholder="Name"><br>
+              <input type="text" id="contact-element" name="email" placeholder="Email"><br>
+              <input type="text" id="contact-element" name="subject" placeholder="Subject"><br>
+              <textarea id="message" name="message" placeholder="Message"></textarea>
+              <br>
+              <input type="submit" id="submit" name="submit" value="Submit">
+            </form>
+          </div>
           
         </div>
       </section>
