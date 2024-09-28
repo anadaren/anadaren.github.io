@@ -50,7 +50,7 @@ body {
   margin: 0;
   padding: 0;
   place-items: center;
-  min-width: 320px;
+  min-width: 100vw;
   min-height: 100vh;
 
   font-family: "Lucida Console", monospace;
@@ -347,11 +347,6 @@ body {
     box-shadow: 0px 0px 15px rgb(0, 0, 0, 0.75);
   }
 
-  .proj-category {
-
-  }
-
-
   .proj-category h1 {
     margin-left: 25rem;
     font-weight: 500;
@@ -389,9 +384,7 @@ body {
     border: 1px solid var(--color-light);
     padding: 10px;
     text-align: center;
-    /*animation: fadeIn 1s linear forwards;*/
     
-    transition: 0.3s;
     z-index: 1;
     box-shadow: 0px 4px 8px 0 var(--box-shadow), 0 6px 20px 0 var(--box-shadow);
   }
@@ -679,6 +672,11 @@ body {
 
 /*/ Mobile View /*/
 @media only screen and (max-width: 750px) {
+  html,
+  body {
+    width: 100vw;
+  }
+
   /*/ Navigation Bar Switch to Hamberger View/*/
   nav .navlink {
     display: none;
@@ -691,6 +689,15 @@ body {
   #name-box {
     max-width: 350px;
     margin-left: 0;
+  }
+
+  /*/ Mobile About Section /*/
+  #about-img {
+    animation: none;
+  }
+
+  #about-box {
+    animation: none;
   }
   
   /*/ Mobile Projects Section /*/
@@ -713,7 +720,6 @@ body {
     border: 1px solid;
     padding: 10px;
     text-align: center;
-    /*animation: fadeIn 1s linear forwards;*/
     
     transition: 0.3s;
     z-index: 1;
@@ -724,6 +730,11 @@ body {
   #contact-box {
     max-width: 300px;
     margin-left: 0;
+    animation: none; 
+  }
+
+  .contact-form {
+    animation: none;
   }
 
   /*/ Mobile Footer /*/

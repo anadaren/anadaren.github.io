@@ -45,7 +45,7 @@
   <!-- Setup and start animation! -->
   <script>
     var typed = new Typed('#typed-text', {
-      strings: ['games', 'web apps', 'xr projects', 'art and animation'],
+      strings: ['games', 'web apps', 'XR projects', 'art and animations'],
       typeSpeed: 50,
       loop: true,
       backSpeed: 75,
@@ -134,27 +134,28 @@
 
           </div>
           
+        
+
+        <script src="https://smtpjs.com/v3/smtp.js">
+        </script>
+  
+        <script>
+          function sendEmail() {
+            Email.send({
+              Host : "smtp.gmail.com",
+              Username : "ana.daren.green@gmail.com",
+              Password : "7d4561dc-1972-4eb7-8352-6ac70f2d86a4",
+              To : 'ana.daren.green@gmail.com',
+              From : 'ana.daren.green@gmail.com',
+              Subject : document.getElementById("subject").value,
+              Body : document.getElementById("message").value,
+            }).then(
+              message => alert(message)
+            );
+          }
+        </script>
+      
         </div>
-
-      <script src="https://smtpjs.com/v3/smtp.js">
-      </script>
-
-      <script>
-        function sendEmail() {
-          Email.send({
-            Host : "smtp.gmail.com",
-            Username : "username",
-            Password : "password",
-            To : 'ana.daren.green@gmail.com',
-            From : document.getElementById("email").value,
-            Subject : document.getElementById("subject").value,
-            Body : document.getElementById("message").value,
-          }).then(
-            message => alert(message)
-          );
-        }
-      </script>
-
       </section>
       <!--End of Contact Section-->
 
