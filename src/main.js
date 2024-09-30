@@ -14,3 +14,14 @@ const observer = new IntersectionObserver((entries) => {
 // Hides hidden elements before they are scrolled to
 const hiddenElements = document.querySelectorAll('.hidden');
 hiddenElements.forEach((el) => observer.observe(el));
+
+/* Project Tabs */
+
+function openTab(tabName) {
+  var i;
+  var x = document.getElementsByClassName("category");
+  for (i = 0; i < x.length; i++) {
+    x[i].style.display = "none";
+  }
+  document.getElementById(tabName).style.display = "block";
+}
