@@ -1,3 +1,13 @@
+/* Typed Text Animation */
+
+var typed = new Typed('#typed-text', {
+  strings: ['games', 'web apps', 'XR projects', 'art and animations'],
+  typeSpeed: 50,
+  loop: true,
+  backSpeed: 75,
+  backDelay: 1200,
+});
+
 /* Scroll Animations */
 
 const observer = new IntersectionObserver((entries) => {

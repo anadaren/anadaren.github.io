@@ -10,7 +10,6 @@
 }
 
 :root {
-  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
   line-height: 1.5;
   font-weight: 400;
   scroll-behavior: smooth;
@@ -260,7 +259,7 @@ body {
     border-radius: 15px;
   }
   .button-style:hover {
-    background: var(--color-light);
+    background: var(--link-color);
     color: black;
   }
 
@@ -390,6 +389,7 @@ body {
     width: 13rem;
     border: 1px solid var(--color-light);
     border-radius: 50px;
+    font-family: "Lucida Console", monospace;
   }
   .tab-button:hover {
     cursor: pointer;
