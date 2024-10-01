@@ -1,7 +1,7 @@
 /* Typed Text Animation */
 
 var typed = new Typed('#typed-text', {
-  strings: ['games', 'web apps', 'XR projects', 'art and animations'],
+  strings: ['games', 'web apps', 'XR projects', 'art and animation'],
   typeSpeed: 50,
   loop: true,
   backSpeed: 75,
