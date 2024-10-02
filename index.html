@@ -48,7 +48,7 @@
 
       <!--About Section-->
       <section id="about" class="hidden">
-        <div class="grid-container" id="about-content">
+        <div class="grid-container" id="about-container">
           <img src="images/aboutme.jpg" id="about-img">
 
           <div class="section-box" id="about-box">
@@ -90,7 +90,7 @@
 
         <div id="skill-list">
           <h3>Programming Languages</h3>
-          <ul id="skill-icons">
+          <ul id="skill-icons" class="list-1">
             <li>
               <i class="devicon-html5-plain-wordmark"></i>
             </li>
@@ -111,7 +111,7 @@
             </li>
           </ul>
           <h3>Tools and Frameworks</h3>
-          <ul id="skill-icons">
+          <ul id="skill-icons" class="list-2">
             
             <li>
               <i class="devicon-react-original-wordmark"></i>
@@ -143,6 +143,16 @@
             <li>
               <i class="devicon-maya-plain"></i>
             </li>
+            <li>
+              <i class="devicon-vitejs-plain"></i>
+            </li>
+            <li>
+              <i class="devicon-netlify-plain"></i>
+            </li>
+            <li>
+              <i class="devicon-figma-plain"></i>
+            </li>
+            
             
           </ul>
       </div>
@@ -150,7 +160,7 @@
       <!--End of Skills Section-->
       
       <!--Project Section-->
-      <script id="replace_with_projects" src="/src/components/projects.js"></script>
+      <script defer src="/src/components/projects.js" id="replace_with_projects"></script>
       <!--End of Project Section-->
 
       <!--Contact Section-->
@@ -172,7 +182,7 @@
             <a href="https://x.com/galaxysnapback"><img src="/images/icons/twitter.png"></a>
           </div>
 
-          <div class="contact-form">
+          <div id="contact-form">
             <form id="form" onsubmit="sendEmail(); reset(); return false;">
               <p class="form-label"><label for="name">Name</label></p>
               <input type="text" id="contact-element" name="name" placeholder="Name..." required><br>

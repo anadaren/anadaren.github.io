@@ -279,10 +279,11 @@ body {
     padding-top: 125px;
   }
 
-  .grid-container#about-content {
+  .grid-container#about-container {
     display: flex;
-    gap: 25px;
+    gap: 30px;
     align-items: center;
+    justify-content: center;
   }
 
   #about-img {
@@ -290,11 +291,15 @@ body {
     box-shadow: 0px 4px 8px 0 var(--box-shadow), 0 6px 20px 0 var(--box-shadow);
     max-height: 500px;
     animation: moveRight 1s ease;
+    animation-play-state: paused;
+    animation-delay: calc(var(--scroll) * -5s);
   }
 
   #about-box {
     max-width: 650px;
     animation: moveLeft 1s ease;
+    animation-play-state: paused;
+    animation-delay: calc(var(--scroll) * -5s);
   }
 
   #about-box ul {
@@ -320,8 +325,19 @@ body {
   }
 
   #skill-list {
-    margin-top: 25px;
+    margin-top: 5px;
+    
+  }
 
+  .list-1 {
+    animation: moveLeft 1s ease;
+    animation-play-state: paused;
+    animation-delay: calc(var(--scroll) * -2.3s);
+  }
+  .list-2 {
+    animation: moveRight 1s ease;
+    animation-play-state: paused;
+    animation-delay: calc(var(--scroll) * -2.3s);
   }
 
   #skill-icons {
@@ -357,6 +373,7 @@ body {
   
   hr.proj-line {
     position: relative;
+    margin-bottom: 25px;
     text-align: center;
     border: 2px solid var(--color-light);
     border-radius: 5px;
@@ -366,17 +383,18 @@ body {
 
   #tab-button-container {
     display: flex;
+    flex-wrap: wrap;
     align-items: center;
     justify-content: center;
-    margin-top: 15px;
+    margin: 5px 25px 0px 25px;
   }
   .tab-button {
-    margin: 10px 15px 10px 15px;
-    padding: 15px 50px 15px 50px;
+    margin: 5px 10px 10px 10px;
+    padding: 10px 0 10px 0;
     background-color: var(--color-medium);
     color: var(--color-light);
-    font-size: 20px;
-    width: 13rem;
+    font-size: 16px;
+    width: 8rem;
     border: 1px solid var(--color-light);
     border-radius: 50px;
     font-family: "Lucida Console", monospace;
@@ -385,7 +403,10 @@ body {
     cursor: pointer;
     background-color: var(--button-color);
   }
-  .tab-button:focus {
+  .tab-selected {
+    background-color: var(--link-color);
+  }
+  .tab-selected:hover {
     background-color: var(--link-color);
   }
 
@@ -423,7 +444,7 @@ body {
     width: 19em;
     border-radius: 25px;
     font-size: 1rem;
-    margin-top: 20px;
+    margin-top: 0px;
     margin-bottom: 20px;
     border: 1px solid var(--color-light);
     padding: 10px;
@@ -489,7 +510,9 @@ body {
   #contact-box {
     position: relative;
     max-width: 30rem;
-    animation: moveRight 1s ease;
+    animation: moveRight .7s ease;
+    animation-play-state: paused;
+    animation-delay: calc(var(--scroll) * -.6s);
   }
   
   #contact-box img {
@@ -508,12 +531,13 @@ body {
     margin: 0;
   }
 
-  .contact-form {
-    width: 100%;
+  #contact-form {
+    width: 90%;
     padding: 0px;
-    border-radius: 5px;
     max-width: 500px;
-    animation: moveLeft 1s ease;
+    animation: moveLeft .7s ease;
+    animation-play-state: paused;
+    animation-delay: calc(var(--scroll) * -0.6s);
   }
 
   form #contact-element {
@@ -624,16 +648,17 @@ body {
 
 @keyframes fadeUp {
   0% { margin-top: 25%;
-      height: 300%;
-      opacity: 0; }
-  100% {
-      height: 300%;
+      height: 0%;
+      opacity: 0;
+    }
+  100% { margin-top: 25%;
+      height: 100%;
       opacity: 1; }
 }
 
 @keyframes moveRight {
   0% {
-    transform: translateX(-25%);
+    transform: translateX(-75%);
     opacity: 0; }
 100% {
     transform: translateX(0%);
@@ -642,7 +667,7 @@ body {
 
 @keyframes moveLeft {
   0% {
-    transform: translateX(25%);
+    transform: translateX(75%);
     opacity: 0; }
 100% {
     transform: translateX(0%);
@@ -685,9 +710,12 @@ body {
   /*/ Mobile About Section /*/
 
   /* Stack image above text */
-  .grid-container#about-content {
+  #about-container {
+    display: flex;
     flex-wrap: wrap;
-    margin: 0 25px 0 25px;
+    align-items: center;
+    justify-content: center;
+    gap: 30px;
   }
 
   #about-img {
@@ -715,10 +743,7 @@ body {
 
   /*/ Navigation Bar Switch to Hamberger View/*/
   nav p {
-    /*top: 10px;
-    font-size: 1em;
-    inline-size: 150px;
-    overflow: hidden;*/
+    font-size: 1.4em;
   }
   nav .navlink {
     display: none;
@@ -764,7 +789,7 @@ body {
   /*/ Mobile Projects Section /*/
 
   #tab-button-container {
-    flex-direction: column;
+    margin: 15px auto 0px auto;
   }
   .tab-button {
     font-size: 1rem;

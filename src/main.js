@@ -25,13 +25,28 @@ const observer = new IntersectionObserver((entries) => {
 const hiddenElements = document.querySelectorAll('.hidden');
 hiddenElements.forEach((el) => observer.observe(el));
 
-/* Project Tabs */
+// Percentage scrolled put into a stylesheet variable
+window.addEventListener('scroll', () => {
+  document.body.style.setProperty('--scroll', window.scrollY / (document.body.offsetHeight - window.innerHeight));
+}, false);
 
-function openTab(tabName) {
-  var i;
-  var x = document.getElementsByClassName("category");
-  for (i = 0; i < x.length; i++) {
+
+/* Project Tabs */
+const selectTab = (el) => {
+  var x = document.getElementsByClassName("tab-button");
+  for (var i = 0; i < x.length; i++) {
+    x[i].classList.remove("tab-selected");
+  }
+  el.classList.add("tab-selected");
+}
+
+const openTab = (tabName) => {
+  var x = document.getElementsByClassName("project-box");
+  for (var i = 0; i < x.length; i++) {
     x[i].style.display = "none";
   }
-  document.getElementById(tabName).style.display = "block";
+  var y = document.getElementsByClassName(tabName);
+  for (var i = 0; i < y.length; i++) {
+    y[i].style.display = "block";
+  }
 }
