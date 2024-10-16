@@ -5,6 +5,10 @@
 .class
 */
 
+* {
+  max-width: 100vw;
+}
+
 :root {
   line-height: 1.5;
   font-weight: 400;
@@ -77,7 +81,7 @@ body {
     position: static;
     font-size: 1rem;
     margin: 0;
-    /*animation: fadeIn 1s linear forwards;*/
+    animation: fadeIn 1s linear forwards;
     border-radius: 25px;
     padding: 20px;
     width: 100%;
@@ -225,6 +229,8 @@ body {
   /* Top Section */
   #name {
     padding-top: 180px;
+    background: rgb(1,0,24);
+    background: linear-gradient(0deg, var(--color-dark) 0%, rgb(37, 34, 97) 55%, rgb(84, 107, 209) 100%);
   }
 
   #name-text {
@@ -233,9 +239,17 @@ body {
 
   #name-box  {
     display: flex;
+    min-height: 15rem;
+    max-height: 16.5rem;
     max-width: 30rem;
     margin-left: 10%;
-    min-height: 15rem;
+    margin-bottom: -25em;
+
+  }
+
+  #container3D {
+    margin-left: auto;
+    margin-right: auto;
   }
 
   header {
@@ -290,16 +304,16 @@ body {
     border: 1px solid var(--color-light);
     box-shadow: 0px 4px 8px 0 var(--box-shadow), 0 6px 20px 0 var(--box-shadow);
     max-height: 500px;
-    animation: moveRight 1s ease;
+    /*animation: moveRight 1s ease;
     animation-play-state: paused;
-    animation-delay: calc(var(--scroll) * -5s);
+    animation-delay: calc(var(--scroll) * -5s);*/
   }
 
   #about-box {
     max-width: 650px;
-    animation: moveLeft 1s ease;
+    /*animation: moveLeft 1s ease;
     animation-play-state: paused;
-    animation-delay: calc(var(--scroll) * -5s);
+    animation-delay: calc(var(--scroll) * -5s);*/
   }
 
   #about-box ul {
@@ -330,14 +344,14 @@ body {
   }
 
   .list-1 {
-    animation: moveLeft 1s ease;
+    /*animation: moveLeft 1s ease;
     animation-play-state: paused;
-    animation-delay: calc(var(--scroll) * -2.3s);
+    animation-delay: calc(var(--scroll) * -2.3s);*/
   }
   .list-2 {
-    animation: moveRight 1s ease;
+    /*animation: moveRight 1s ease;
     animation-play-state: paused;
-    animation-delay: calc(var(--scroll) * -2.3s);
+    animation-delay: calc(var(--scroll) * -2.3s);*/
   }
 
   #skill-icons {
@@ -510,9 +524,9 @@ body {
   #contact-box {
     position: relative;
     max-width: 30rem;
-    animation: moveRight .7s ease;
+    /*animation: moveRight .7s ease;
     animation-play-state: paused;
-    animation-delay: calc(var(--scroll) * -.6s);
+    animation-delay: calc(var(--scroll) * -.6s);*/
   }
   
   #contact-box img {
@@ -535,9 +549,9 @@ body {
     width: 90%;
     padding: 0px;
     max-width: 500px;
-    animation: moveLeft .7s ease;
+    /*animation: moveLeft .7s ease;
     animation-play-state: paused;
-    animation-delay: calc(var(--scroll) * -0.6s);
+    animation-delay: calc(var(--scroll) * -0.6s);*/
   }
 
   form #contact-element {
@@ -566,6 +580,7 @@ body {
     width: 5rem;
     border-radius: 5px;
     margin: 10px 0px 0px 0px;
+    font-family: "Lucida Console", monospace;
   }
 
   #submit:hover {
