@@ -60,7 +60,8 @@ scene.add(pointLight, ambientLight);
 //scene.add(lightHelper);
 
 controls = new OrbitControls(camera, renderer.domElement);
-controls.noZoom = true;
+controls.enablePan = false;
+
 
 // animation
 function animate() {

@@ -23,7 +23,7 @@
   --link-color: rgb(83, 91, 242);
   --color-light: rgb(218, 221, 255);
   --color-medium: rgba(16, 19, 51, 0.85);
-  --color-dark: rgb(16, 14, 28);
+  --color-dark: rgb(1,0,24);
   --text-color: rgb(218, 221, 255);
   --button-color: rgb(14, 23, 125);
 
@@ -228,10 +228,10 @@ body {
   
   /* Top Section */
   #name {
-    padding-top: 180px;
+    padding-top: 0px;
     background: rgb(1,0,24);
-    background: linear-gradient(0deg, var(--color-dark) 0%, rgb(37, 34, 97) 55%, rgb(84, 107, 209) 100%);
-  }
+    /*background: linear-gradient(0deg, var(--color-dark) 0%, rgb(37, 34, 97) 55%, rgb(84, 107, 209) 100%);
+  */}
 
   #name-text {
     font-size: 2.5em;
@@ -242,15 +242,13 @@ body {
     min-height: 15rem;
     max-height: 16.5rem;
     max-width: 30rem;
+    margin-top: 180px;
     margin-left: 10%;
     margin-bottom: -25em;
 
   }
 
-  #container3D {
-    margin-left: auto;
-    margin-right: auto;
-  }
+
 
   header {
     margin-bottom: 1.5rem;
