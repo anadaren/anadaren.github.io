@@ -25,3 +25,6 @@ dist-ssr
 
 # Work in progress three.js features
 /src/three.js
+
+# Work in progress contact form
+/src/contact.html

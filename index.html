@@ -164,7 +164,7 @@
 
     <!--Contact Section-->
     <section id="contact" class="hidden">
-        <div id="contact-container">
+        <div class="grid-container" id="contact-container">
           <div class="section-box" id="contact-box">
             <h1>Contact</h1>
             <p>Want to talk? Email me at:</p>
@@ -181,42 +181,9 @@
             <a href="https://x.com/galaxysnapback"><img src="/images/icons/twitter.png"></a>
           </div>
 
-          <div id="contact-form">
-            <form id="form" onsubmit="sendEmail(); reset(); return false;">
-              <p class="form-label"><label for="name">Name</label></p>
-              <input type="text" id="contact-element" name="name" placeholder="Name..." required><br>
-              <p class="form-label"><label for="email">Email</label></p>
-              <input type="text" id="contact-element" name="email" placeholder="Email..." required><br>
-              <p class="form-label"><label for="subject">Subject</label></p>
-              <input type="text" id="contact-element" name="subject" placeholder="Subject..."><br>
-              <p class="form-label"><label for="message">Message</label></p>
-              <textarea id="message" name="message" placeholder="Message..." required></textarea>
-              <br>
-              <button type="submit" id="submit" name="submit" value="Submit">Submit</button>
-            </form>
 
-          </div>
           
-        
 
-        <script src="https://smtpjs.com/v3/smtp.js">
-        </script>
-  
-        <script>
-          function sendEmail() {
-            Email.send({
-              Host : "smtp.gmail.com",
-              Username : "ana.daren.green@gmail.com",
-              Password : "7d4561dc-1972-4eb7-8352-6ac70f2d86a4",
-              To : 'ana.daren.green@gmail.com',
-              From : 'ana.daren.green@gmail.com',
-              Subject : document.getElementById("subject").value,
-              Body : document.getElementById("message").value,
-            }).then(
-              message => alert(message)
-            );
-          }
-        </script>
       
         </div>
     </section>
