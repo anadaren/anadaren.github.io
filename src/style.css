@@ -444,7 +444,7 @@ body {
   .project-box {
     background: var(--color-medium);
     position: relative;
-    min-height: 425px;
+    min-height: 450px;
     width: 19em;
     border-radius: 25px;
     font-size: 1rem;
@@ -459,7 +459,6 @@ body {
   }
   
   .project-box:hover {
-    cursor: pointer;
     box-shadow: 8px 8px 0px 0 var(--link-color);
     animation: hoverAnim .2s forwards;
     transition: .1s ease;
@@ -472,20 +471,24 @@ body {
   }
   
   .project-box h2 {
-    margin: 0;
+    margin: 8px;
   }
   
   .project-box p {
     font-size: .85rem;
+    /*max-height: 75px;*/
+    overflow-y: scroll;
   }
 
-  a.proj-link {
-    display: block;
-    height: 100%;
-    width: 100%;
-    text-decoration: none;
+  .proj-buttons {
+    position: absolute;
+    font-size: .85rem;
+    bottom: 30px;
+    width: 95%;
   }
 
+
+  
   .tags {
     width: auto;
     background: var(--button-color);
