@@ -22,10 +22,10 @@
 
   --link-color: rgb(83, 91, 242);
   --color-light: rgb(218, 221, 255);
-  --color-medium: rgba(16, 19, 51, 0.85);
-  --color-dark: rgb(1,0,24);
+  --color-medium: rgba(9, 14, 61, 0.85);
+  --color-dark: rgb(2, 0, 31);
   --text-color: rgb(218, 221, 255);
-  --button-color: rgb(14, 23, 125);
+  --button-color: rgb(5, 16, 141);
 
   --box-shadow: rgba(0, 0, 0, 0.75);
   --box-hover: rgba(255, 255, 255, 0.75);
@@ -66,9 +66,7 @@ body {
     font-weight: 700;
     font-style: normal;
   }
-  
 
-  
   section {
     display: grid;
     align-content: center;
@@ -87,7 +85,6 @@ body {
     width: 100%;
     max-width: 1000px;
     z-index: 1;
-    border: 1px solid var(--color-light);
     box-shadow: 0px 4px 8px 0 rgba(0, 0, 0, 0.75), 0 6px 20px 0 rgba(0, 0, 0, 0.75);
   }
   
@@ -243,7 +240,7 @@ body {
     max-height: 16.5rem;
     max-width: 30rem;
     margin-top: 180px;
-    margin-left: 10%;
+    margin-left: 7%;
     margin-bottom: 0em;
   }
 
@@ -254,7 +251,7 @@ body {
   
   .button-style {
     background: var(--button-color);
-    padding: 15px;
+    padding: 12px;
     border-radius: 15px;
   }
   .button-style:hover {
@@ -297,7 +294,6 @@ body {
   }
 
   #about-img {
-    border: 1px solid var(--color-light);
     box-shadow: 0px 4px 8px 0 var(--box-shadow), 0 6px 20px 0 var(--box-shadow);
     max-height: 500px;
   }
@@ -323,14 +319,13 @@ body {
   }
 
   #skills h3 {
-    font-size: 25px;
+    font-size: 1.4rem;
     font-weight: lighter;
     text-align: center;
   }
 
   #skill-list {
     margin-top: 5px;
-    
   }
 
   .list-1 {
@@ -355,7 +350,7 @@ body {
   }
 
   #skill-icons li {
-    font-size: 75px;
+    font-size: 4rem;
     margin: 0 10px 0 10px;
   }
   
@@ -393,15 +388,15 @@ body {
     margin: 5px 25px 0px 25px;
   }
   .tab-button {
-    margin: 5px 10px 10px 10px;
+    margin: 5px 10px 5px 10px;
     padding: 10px 0 10px 0;
     background-color: var(--color-medium);
     color: var(--color-light);
-    font-size: 16px;
-    width: 8rem;
-    border: 1px solid var(--color-light);
+    font-size: .9rem;
+    width: 7rem;
     border-radius: 50px;
     font-family: "Lucida Console", monospace;
+    transition: background-color 0.3s ease-in-out;
   }
   .tab-button:hover {
     cursor: pointer;
@@ -444,13 +439,12 @@ body {
   .project-box {
     background: var(--color-medium);
     position: relative;
-    min-height: 450px;
+    min-height: 440px;
     width: 19em;
-    border-radius: 25px;
+    border-radius: 15px;
     font-size: 1rem;
     margin-top: 0px;
     margin-bottom: 20px;
-    border: 1px solid var(--color-light);
     padding: 10px;
     text-align: center;
     
@@ -467,11 +461,12 @@ body {
   .project-box img {
     width: 300px;
     height: 200px;
-    border-radius: 25px;
+    border-radius: 15px;
   }
   
   .project-box h2 {
     margin: 8px;
+    font-size: 1.3rem;
   }
   
   .project-box p {
@@ -483,7 +478,7 @@ body {
   .proj-buttons {
     position: absolute;
     font-size: .85rem;
-    bottom: 30px;
+    bottom: 25px;
     width: 95%;
   }
 
@@ -714,7 +709,7 @@ body {
 
   /*/ Mobile Top Section /*/
   #name-box {
-    max-width: 250px;
+    max-width: 300px;
   }
 
   #name h1 {
@@ -729,12 +724,12 @@ body {
   /*/ Mobile About Section /*/
   #about-img {
     animation: none;
-    max-width: 250px;
+    max-width: 275px;
   }
 
   #about-box {
     animation: none;
-    max-width: 250px;
+    max-width: 300px;
   }
 
   /*/ Mobiles Skills section /*/
@@ -762,19 +757,19 @@ body {
   
   .project-box {
     height: auto;
-    max-width: 250px;
+    max-width: 300px;
   }
 
   .project-box img {
-    width: 250px;
-    height: 167px;
+    width: 300px;
+    height: 200px;
   }
 
 
   /*/ Mobile Contact Section /*/
 
   #contact-box {
-    max-width: 250px;
+    max-width: 300px;
   }
 
   .contact-form {
