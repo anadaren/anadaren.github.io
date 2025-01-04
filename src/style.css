@@ -26,6 +26,7 @@
   --color-dark: rgb(1, 0, 30);
   --text-color: rgb(218, 221, 255);
   --button-color: rgb(5, 16, 141);
+  --border-color: rgb(41, 40, 110);
 
   --box-shadow: rgba(0, 0, 0, 0.75);
   --box-hover: rgba(255, 255, 255, 0.75);
@@ -80,6 +81,7 @@ body {
   
   .section-box {
     background: var(--color-medium);
+    outline: 1px solid var(--border-color);
     position: static;
     font-size: 1rem;
     margin: 0;
@@ -111,8 +113,6 @@ body {
     top: 0;
     height: 60px;
     width: 100%;
-    margin-left: auto; 
-    margin-right: 0;
     overflow: hidden;
     z-index: 2;
   }
@@ -121,7 +121,7 @@ body {
   nav img {
     width: 50px;
     height: 50px;
-    margin: 3px 10px 0px 15px;
+    margin: 4px 15px 0px 20px;
   }
   
   /* Title text */
@@ -140,7 +140,7 @@ body {
     font-family: "Lucida Console", monospace;
     float: right;
     text-align: center;
-    padding: 17px 16px;
+    padding: 17px 19px;
     text-decoration: none;
     font-size: 17px;
   }
@@ -156,12 +156,12 @@ body {
   nav #ham {
     display: none;
     position: relative;
-    top: 13%;
-    height: 50px;
-    width: 50px;
+    top: 20%;
+    height: 40px;
+    width: 40px;
     float: right;
     margin-left: auto;
-    margin-right: 10px;
+    margin-right: 15px;
   }
   
   #ham span {
@@ -234,7 +234,7 @@ body {
     /*background: linear-gradient(0deg, var(--color-dark) 0%, rgb(37, 34, 97) 55%, rgb(84, 107, 209) 100%);*/
   }
 
-  #name-text {
+  #name h1 {
     font-size: 2.75em;
   }
 
@@ -402,7 +402,7 @@ body {
     width: 7rem;
     border-radius: 50px;
     border-style: none;
-    outline: 3px solid var(--link-color);
+    outline: 1px solid var(--border-color);
     font-family: "Lucida Console", monospace;
     transition: background-color 0.3s ease-in-out;
   }
@@ -411,9 +411,6 @@ body {
     background-color: var(--button-color);
   }
   .tab-selected {
-    background-color: var(--link-color);
-  }
-  .tab-selected:hover {
     background-color: var(--link-color);
   }
 
@@ -446,6 +443,7 @@ body {
   
   .project-box {
     background: var(--color-medium);
+    outline: 1px solid var(--border-color);
     position: relative;
     min-height: 440px;
     width: 19em;
@@ -703,6 +701,7 @@ body {
 /*/ Mobile View /*/
 @media only screen and (max-width: 750px) {
 
+
   /*/ Navigation Bar Switch to Hamberger View/*/
   nav p {
     font-size: 1.4em;
@@ -716,11 +715,15 @@ body {
 
   /*/ Mobile Top Section /*/
   #name-box {
-    max-width: 300px;
+    font-size: 1rem;
+    width: 100%;
+    max-width: 80%;
+    margin: auto;
+    margin-top: 180px;;
   }
 
   #name h1 {
-    font-size: 1.5rem;
+    font-size: 2rem;
   }
   
   h1, h2 {
@@ -729,14 +732,25 @@ body {
   
 
   /*/ Mobile About Section /*/
+  #about-container {
+    width: 100%;
+    max-width: 90%;
+    margin: auto;
+  }
+
   #about-img {
     animation: none;
-    max-width: 275px;
+    max-width: 85%;
   }
 
   #about-box {
     animation: none;
-    max-width: 300px;
+  }
+  #about-box h1 {
+    font-size: 2rem;
+  }
+  #about-box p {
+    font-size: 1rem;
   }
 
   /*/ Mobiles Skills section /*/
@@ -775,12 +789,17 @@ body {
 
   /*/ Mobile Contact Section /*/
 
-  #contact-box {
-    max-width: 300px;
+  #contact-container {
+    width: 100%;
+    max-width: 85%;
+    margin: auto;
   }
 
   .contact-form {
     max-width: 350px;
+  }
+  #contact-box h1 {
+    font-size: 2rem;
   }
 
 
@@ -795,7 +814,7 @@ body {
   
   #page-footer p {
     margin: 20px 0px 0px 0px;
-    font-size: .65rem;
+    font-size: .85rem;
   }
   #page-footer ul {
     margin: 10px 25px 15px 20px;
@@ -804,20 +823,20 @@ body {
 }
 
   /*/ Mobile View /*/
-@media only screen and (max-width: 320px) {
+@media only screen and (max-width: 400px) {
 
   nav {
     height: 75px;
   }
   nav p {
     max-width: 150px;
-    top: 5px;
+    top: 8px;
     font-size: 1.25rem;
     text-wrap: wrap;
   }
 
   nav img {
-    margin: 10px 10px 0px 10px;
+    margin: 12px 10px 0px 15px;
   }
 
   .contact-form {
