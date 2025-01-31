@@ -65,10 +65,12 @@ body {
 #cursor {
   width: 30px;
   height: 30px;
-  border: 2px solid #fff;
-  border-radius: 50%;
-  background-color: white;
-  border-radius: 50%;
+  background: hwb(0 51% 49% / 0.5);
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.8);
+    border-radius: 50%;
+  position: absolute;
+  pointer-events: none;
+  transform: translate(-50%, -50%);
 }
 
   h1 {
@@ -344,7 +346,7 @@ body {
     min-height: 12rem;
     max-height: 16.5rem;
     max-width: 30rem;
-    margin: 3rem auto;
+    margin: 4rem auto;
     padding-left: 30px;
     padding-bottom: 35px;
   }

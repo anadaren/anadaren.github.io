@@ -53,14 +53,16 @@ const openTab = (tabName) => {
 
 
 /* Cursor Glow */
-const moveCursor = (e)=> {
-  const mouseY = e.clientY;
-  const mouseX = e.clientX;
-   
-  cursorRounded.style.transform = `translate3d(${mouseX}px, ${mouseY}px, 0)`;
-  
-  cursorPointed.style.transform = `translate3d(${mouseX}px, ${mouseY}px, 0)`;
- 
+const cursor = document.getElementById("cursor");
+
+document.body.onpointermove = event => {
+
+  const { clientX, clientY } = event;
+
+    cursor.animate({
+        left: `${clientX}px`,
+        top: `${clientY}px`
+    }, {duration: 1000, fill: "forwards"})
+
 }
 
-window.addEventListener('mousemove', moveCursor)
