@@ -59,10 +59,11 @@ document.body.onpointermove = event => {
 
   const { clientX, clientY } = event;
 
-    cursor.animate({
-        left: `${clientX}px`,
-        top: `${clientY}px`
-    }, {duration: 1000, fill: "forwards"})
+  cursor.animate({
+    left: `${clientX}px`,
+    top: `${clientY}px`
+}, { duration: 100, fill: "forwards" });  // Reduce to 100ms
+
 
 }
 

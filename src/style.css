@@ -63,14 +63,17 @@ body {
 }
 
 #cursor {
-  width: 30px;
-  height: 30px;
-  background: hwb(0 51% 49% / 0.5);
-    box-shadow: 0 0 10px rgba(255, 255, 255, 0.8);
-    border-radius: 50%;
-  position: absolute;
+  width: 0px;
+  height: 0px;
+  background: rgba(255, 255, 255, 1);
+  box-shadow:
+    0 0 60px 10px var(--link-color),
+    0 0 300px 250px rgba(16, 24, 100, .85);
+  border-radius: 100%;
+  position: fixed;
   pointer-events: none;
   transform: translate(-50%, -50%);
+  z-index: -2;
 }
 
   h1 {
