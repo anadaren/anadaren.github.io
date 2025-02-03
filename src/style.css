@@ -60,6 +60,7 @@ body {
 
   font-family: "Lucida Console", monospace;
   color: var(--text-color);
+  overflow-x: hidden;
 }
 
 #cursor {
@@ -75,6 +76,33 @@ body {
   transform: translate(-50%, -50%);
   z-index: -2;
 }
+
+/* Star Background */
+.stars {
+  position: fixed;
+  height: 100%;
+  width: 100%;
+  top: 0%;
+  left: 0%;
+  outline: 2px solid red;
+  z-index: -999;
+}
+.star {
+  position: absolute;
+  background: white;
+  border-radius: 50%;
+  opacity: 0.8;
+  animation: animStar linear infinite;
+}
+@keyframes animStar {
+  from {
+      transform: translateY(0px);
+  }
+  to {
+      transform: translateY(500px);
+  }
+}
+/* End of Star Background */
 
   h1 {
     font-size: 2em;
