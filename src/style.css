@@ -21,9 +21,8 @@
   -webkit-text-size-adjust: 100%;
 
   --link-color: rgb(83, 91, 242);
-  --text-color: rgb(218, 221, 255);
   --button-color: rgb(23, 5, 141);
-  --border-color: rgb(41, 40, 110);
+  --border-color: rgb(141, 140, 222);
 
   --color-light: rgb(218, 221, 255);
   --color-medium: rgba(9, 14, 61, 0.85);
@@ -37,10 +36,15 @@
   
 }
 
+html {
+  height: 100%;
+}
+
+
  /* All Links */
 a {
   font-weight: 500;
-  color: var(--text-color);
+  color: var(--color-light);
   text-decoration: inherit;
 }
 a:hover {
@@ -59,50 +63,12 @@ body {
   min-height: 100vh;
 
   font-family: "Lucida Console", monospace;
-  color: var(--text-color);
+  color: var(--color-light);
   overflow-x: hidden;
 }
 
-#cursor {
-  width: 0px;
-  height: 0px;
-  background: rgba(255, 255, 255, 1);
-  box-shadow:
-    0 0 60px 10px var(--link-color),
-    0 0 300px 250px rgba(16, 24, 100, .85);
-  border-radius: 100%;
-  position: fixed;
-  pointer-events: none;
-  transform: translate(-50%, -50%);
-  z-index: -2;
-}
 
-/* Star Background */
-.stars {
-  position: fixed;
-  height: 100%;
-  width: 100%;
-  top: 0%;
-  left: 0%;
-  outline: 2px solid red;
-  z-index: -999;
-}
-.star {
-  position: absolute;
-  background: white;
-  border-radius: 50%;
-  opacity: 0.8;
-  animation: animStar linear infinite;
-}
-@keyframes animStar {
-  from {
-      transform: translateY(0px);
-  }
-  to {
-      transform: translateY(500px);
-  }
-}
-/* End of Star Background */
+
 
   h1 {
     font-size: 2em;
@@ -121,6 +87,21 @@ body {
     min-height: 50vh;
     padding: 100px 0 100px 0;
   }
+
+  #cursor {
+    width: 0px;
+    height: 0px;
+    background: rgba(255, 255, 255, 1);
+    box-shadow:
+      0 0 60px 10px var(--link-color),
+      0 0 300px 150px rgba(16, 24, 100, .35);
+    border-radius: 100%;
+    position: fixed;
+    pointer-events: none;
+    transform: translate(-50%, -50%);
+    z-index: -2;
+  }
+  
   
   .section-box {
     background: var(--color-medium);
@@ -205,6 +186,7 @@ body {
     float: right;
     margin-left: auto;
     margin-right: 15px;
+    cursor: pointer;
   }
   
   #ham span {
@@ -715,6 +697,11 @@ body {
 
   #about-img {
     margin: 0;
+  }
+
+  /*/ Small Screen Skills Section /*/
+  #skills-grid {
+    grid-template-columns: 1fr;
   }
 
   #skills-box {

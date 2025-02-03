@@ -66,28 +66,3 @@ document.body.onpointermove = event => {
 
 
 }
-
-/* Generate Stars */
-function generateStars(n, size, animationDuration) {
-  const stars = document.createElement("div");
-  stars.classList.add("stars");
-  document.body.appendChild(stars);
-  
-  for (let i = 0; i < n; i++) {
-      const star = document.createElement("div");
-      star.classList.add("star");
-      star.style.width = `${size}px`;
-      star.style.height = `${size}px`;
-      star.style.left = `${Math.random() * 2000}px`;
-      star.style.top = `${Math.random() * 2000}px`;
-      star.style.animationDuration = `${animationDuration}s`;
-      stars.appendChild(star);
-  }
-}
-
-
-document.addEventListener("DOMContentLoaded", () => {
-  generateStars(700, 1, 5);  // Small stars
-  generateStars(200, 2, 10); // Medium stars
-  generateStars(100, 3, 15); // Big stars
-});
