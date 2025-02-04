@@ -328,6 +328,7 @@ body {
   #about-img {
     box-shadow: 10px 10px var(--link-color);
     max-height: 525px;
+    z-index: 0;
   }
 
   #about-box {
@@ -482,6 +483,9 @@ body {
     
     z-index: 1;
     box-shadow: 0px 4px 8px 0 var(--box-shadow), 0 6px 20px 0 var(--box-shadow);
+  }
+  .project-box #long-title {
+    font-size: 20px;
   }
   
   .project-box:hover {
