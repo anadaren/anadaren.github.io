@@ -6,15 +6,16 @@
   "scripts": {
     "dev": "vite",
     "build": "vite build",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "compile:sass": "sass src/bg-style.scss src/bg-style.css"
   },
   "devDependencies": {
+    "node-sass": "^9.0.0",
     "sass": "^1.83.4",
     "vite": "^4.4.5"
   },
   "dependencies": {
     "gsap": "^3.12.5",
-    "three": "^0.169.0",
     "typed.js": "^2.1.0"
   }
 }

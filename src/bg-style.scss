@@ -1,6 +1,8 @@
 @use "sass:math";
 @use "sass:string";
 
+/*/ Generate Star Background /*/
+
 // Function to generate multiple box shadows
 @function multiple-box-shadow($n) {
   $value: "#{math.random(2000)}px #{math.random(2000)}px #FFF";
@@ -9,13 +11,12 @@
   }
   @return string.unquote($value);
 }
-
 // Define shadow variables
 $shadows-small: multiple-box-shadow(700);
 $shadows-medium: multiple-box-shadow(200);
 $shadows-big: multiple-box-shadow(100);
 
-
+// Little Stars
 #stars {
   position: fixed;
   width: 1px;
@@ -35,6 +36,7 @@ $shadows-big: multiple-box-shadow(100);
   }
 }
 
+// Medium Stars
 #stars2 {
   position: fixed;
   width: 2px;
@@ -54,6 +56,7 @@ $shadows-big: multiple-box-shadow(100);
   }
 }
 
+// Big Stars
 #stars3 {
   position: fixed;
   width: 3px;
@@ -81,3 +84,4 @@ $shadows-big: multiple-box-shadow(100);
     transform: translateY(-100vh);
   }
 }
+/*/ End of Star Background /*/
