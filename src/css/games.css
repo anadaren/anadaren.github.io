@@ -2,8 +2,14 @@
 
 .grid-container#games {
     grid-template-columns: auto auto;
-    margin: 0px 0px 0px 0px;
   }
+.grid-container#games div {
+  width: 450px;
+}
+.grid-container#games .tags {
+  max-width: 425px;
+  margin-bottom: 3rem;
+}
   
   .game-box {
     background: var(--color-medium);
@@ -16,7 +22,7 @@
     margin-bottom: 30px;
     margin-left: auto;
     margin-right: auto;
-    border: 1px solid;
+    border: 1px solid var(--border-color);
     padding: 30px;
     text-align: center;
     /*animation: fadeIn 1s linear forwards;*/
@@ -63,7 +69,7 @@
     margin-bottom: 30px;
     margin-left: auto;
     margin-right: auto;
-    border: 1px solid;
+    border: 1px solid var(--border-color);
     padding: 30px;
     text-align: center;
     /*animation: fadeIn 1s linear forwards;*/
@@ -101,11 +107,8 @@
     width: 75%;
     border-radius: 25px;
     font-size: 1rem;
-    margin-top: 30px;
-    margin-bottom: 30px;
-    margin-left: auto;
-    margin-right: auto;
-    border: 1px solid;
+    margin: 30px auto;
+    border: 1px solid var(--border-color);
     padding: 30px;
     text-align: center;
     /*animation: fadeIn 1s linear forwards;*/
@@ -116,7 +119,6 @@
   }
   
   .weekgame-box:hover {
-    cursor: pointer;
     box-shadow: 8px 8px 0px 0 var(--link-color);
   }
   
@@ -135,6 +137,7 @@
   .weekgame-box p {
     font-size: .85rem;
   }
+
 
   .textChunk {
     padding: 25px 0px 25px 0px;
@@ -161,7 +164,7 @@
       font-size: 1rem;
       margin-top: 20px;
       margin-bottom: 20px;
-      border: 1px solid;
+      border: 1px solid var(--border-color);
       padding: 10px;
       text-align: center;
       /*animation: fadeIn 1s linear forwards;*/
@@ -196,7 +199,7 @@
         font-size: 1rem;
         margin-top: 20px;
         margin-bottom: 20px;
-        border: 1px solid;
+        border: 1px solid var(--border-color);
         padding: 10px;
         text-align: center;
         /*animation: fadeIn 1s linear forwards;*/

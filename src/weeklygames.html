@@ -8,18 +8,14 @@
     <meta charset="UTF-8">
     <meta name="author" content="Anastasia Green">
     <meta name="description" content="Anastasia Green's developer portfolio">
-    <meta name="keywords" content="HTML, CSS, JavaScript">
-    <meta name="author" content="Anastasia Green">
+    <meta name="keywords" content="HTML, CSS, JavaScript, React, Frontend Developer, Frontend, Fullstack">
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-
+    
     <link rel="icon" type="image/svg+xml" href="/images/favicon.png?" />
-    <link rel="stylesheet" href="/src/style.css">
-    <link rel="stylesheet" href="/src/games.css">
+    <link rel="stylesheet" href="/src/css/style.css">
+    <link rel="stylesheet" href="/src/css/games.css">
     <script defer src="/src/main.js"></script>
 
- 
-   
-    
     <title>Anastasia Green Portfolio</title>
   </head>
 
@@ -27,10 +23,12 @@
     <!--Navigation Bar-->
    <script id="replace_with_navbar" src="/src/components/navbar.js"></script>
 
+   <div id="cursor"></div>
+
       <!--Project Section-->
       <section id="projects">
         <div id="proj-top">
-          <h1>Weekly Game Prototypes</h1>
+          <h1>One Week Prototypes</h1>
           <hr class="proj-line">
         </div>
 
@@ -38,7 +36,7 @@
           <img src="/images/projectPics/gamestudio.png">
           <div class="textChunk">
             <h2>Project Details</h2>
-            <ul>
+            <ul class="project-specs">
               <li><b>Genre:</b> Various</li>   
               <li><b>Platforms:</b> <a href="https://anadaren.itch.io/">Itch.io</a></li>
               <li><b>Engine:</b> Unity</li>
@@ -54,7 +52,6 @@
       </div>
          <!--Project 1-->
          <div class="weekgame-box">
-            <a href="https://anadaren.itch.io/midnight-hours" class="proj-link">
             <div class="grid-container" id="games">
             <div>
               <img src="/images/projectPics/games/weeklygames/midnighthours.png">
@@ -63,6 +60,7 @@
               <h2>Week 1: Midnight Hours</h2>
             <p>A noir themed 3D Puzzle Game.</p>
             <div class="tags">Unity, C#, Puzzle</div>
+            <a href="https://anadaren.itch.io/midnight-hours" class="button-style">Play Game</a>
             </div>
             <div>
             <p><b>Prompt:</b> New York City</p>
@@ -78,8 +76,7 @@
             <div>
               <img src="/images/projectPics/games/weeklygames/midnighthours2.png">
             </div>
-          </div></div>
-        </a>
+          </div>
         </div>
           <!--End of Project 1-->
 
@@ -87,7 +84,6 @@
 
           <!--Project 2-->
           <div class="weekgame-box">
-            <a href="https://anadaren.itch.io/zippy-bop" class="proj-link">
             <div class="grid-container" id="games">
             <div>
               <img src="/images/projectPics/games/weeklygames/zippybop.png">
@@ -96,6 +92,7 @@
               <h2>Week 2: Zippy Bop</h2>
             <p>A vintage inspired platformer, where you play as a robot cowboy in space fighting other robots.</p>
             <div class="tags">Unity, C#, Platformer</div>
+            <a href="https://anadaren.itch.io/zippy-bop" class="button-style">Play Game</a>
             </div>
             <div>
           <p><b>Prompt:</b> Retro Game Box Art</p>
@@ -109,15 +106,13 @@
           <div>
             <img src="/images/projectPics/games/weeklygames/zippybop2.png">
           </div>
-          </div></div>
-        </a>
+          </div>
         </div>
           <!--End of Project 2-->
 
 
            <!--Project 3-->
            <div class="weekgame-box">
-            <a href="https://anadaren.itch.io/submerged" class="proj-link">
             <div class="grid-container" id="games">
             <div>
               <img src="/images/projectPics/games/weeklygames/submerged.png">
@@ -126,6 +121,7 @@
               <h2>Week 3: Submerged</h2>
             <p>A deep sea horror collectathon based around submechanophobia (the fear of man-made objects that are submerged underwater).</p>
             <div class="tags">Unity, C#, Horror, Collectathon</div>
+            <a href="https://anadaren.itch.io/submerged" class="button-style">Play Game</a>
             </div>
             <div>
             <p><b>Prompt:</b> Titanic</p>
@@ -145,14 +141,12 @@
           <div>
             <img src="/images/projectPics/games/weeklygames/submerged2.png">
           </div>
-            </div></div>
-        </a>
-        </div>
+            </div>
+          </div>
           <!--End of Project 3-->
 
            <!--Project 4-->
            <div class="weekgame-box">
-            <a href="https://anadaren.itch.io/simon" class="proj-link">
             <div class="grid-container" id="games">
             <div>
               <img src="/images/projectPics/games/weeklygames/simon.png">
@@ -161,6 +155,7 @@
               <h2>Week 4: Simon!</h2>
             <p>A point and click take on Simon says, with added horror and surreal elements.</p>
             <div class="tags">Unity, C#, Horror, UI/UX</div>
+            <a href="https://anadaren.itch.io/simon" class="button-style">Play Game</a>
             </div>
             <div>
               <p><b>Prompt:</b> Simon Says</p>
@@ -178,14 +173,13 @@
             <img src="/images/projectPics/games/weeklygames/simon2.png">
           </div>
           
-            </div></div>
-        </a>
-        </div>
-          <!--End of Project 5-->
+            </div>
+          </div>
 
-           <!--Project 2-->
+          <!--End of Project 4-->
+
+           <!--Project 5-->
            <div class="weekgame-box">
-            <a href="https://anadaren.itch.io/abandon" class="proj-link">
             <div class="grid-container" id="games">
             <div>
               <img src="/images/projectPics/games/weeklygames/abandon.png">
@@ -194,6 +188,7 @@
               <h2>Week 5: Abandon</h2>
             <p>A text based point and click riddle game.</p>
                <div class="tags">Unity, C#, Narrative, Puzzle</div>
+               <a href="https://anadaren.itch.io/abandon" class="button-style">Play Game</a>
                </div>
                <div>
                <p><b>Prompt:</b> Text Based Games</p>
@@ -209,14 +204,12 @@
               <div>
                 <img src="/images/projectPics/games/weeklygames/abandon2.png">
               </div>
-              </div></div>
-        </a>
-        </div>
+              </div>
+            </div>
           <!--End of Project 5-->
 
            <!--Project 6-->
            <div class="weekgame-box">
-            <a href="https://anadaren.itch.io/fast-food" class="proj-link">
             <div class="grid-container" id="games">
             <div>
               <img src="/images/projectPics/games/weeklygames/fastfood.png">
@@ -225,6 +218,7 @@
               <h2>Week 6: Fast Food</h2>
             <p>A kart racer designed around fast food and sweets.</p>
             <div class="tags">Unity, C#, Racing, Environment Design</div>
+            <a href="https://anadaren.itch.io/fast-food" class="button-style">Play Game</a>
             </div>
             <div>
           <p><b>Prompt:</b> Fast Food</p>
@@ -237,9 +231,9 @@
           <div>
             <img src="/images/projectPics/games/weeklygames/fastfood2.png">
           </div>
-          </div></div>
-        </a>
+          </div>
         </div>
+
           <!--End of Project 6-->
 
 

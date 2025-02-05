@@ -22,7 +22,7 @@
 
   --link-color: rgb(83, 91, 242);
   --button-color: rgb(23, 5, 141);
-  --border-color: rgb(141, 140, 222);
+  --border-color: rgba(161, 159, 255, 0.67);
 
   --color-light: rgb(218, 221, 255);
   --color-medium: rgba(9, 14, 61, 0.85);
@@ -519,6 +519,10 @@ body {
   }
 
 
+  .project-specs {
+    margin: 2rem 0;
+    text-align: left;
+  }
   
   .tags {
     width: auto;
