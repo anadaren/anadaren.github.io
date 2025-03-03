@@ -355,16 +355,31 @@ body {
     display: grid;
     justify-content: space-evenly;
     grid-template-columns: 1fr 1fr;
+    grid-template-areas:
+    "box1 list1"
+    "list2 box2";
     margin: 0 10%;
   }
 
-  #skills-box  {
+  .skills-box  {
     min-height: 12rem;
     max-height: 16.5rem;
     max-width: 30rem;
     margin: 4rem auto;
     padding-left: 30px;
     padding-bottom: 35px;
+  }
+  #box-1 {
+    grid-area: box1;
+  }
+  #box-2 {
+    grid-area: box2;
+  }
+  #list-1 {
+    grid-area: list1;
+  }
+  #list-2 {
+    grid-area: list2;
   }
 
   #skills h3 {
@@ -373,7 +388,7 @@ body {
     text-align: center;
   }
 
-  #skill-icons {
+  .skill-icons {
     display: flex;
     flex-wrap: wrap;
     list-style: none;
@@ -383,7 +398,7 @@ body {
     padding: 0;
   }
 
-  #skill-icons li {
+  .skill-icons li {
     font-size: 3.5rem;
     margin: 0 10px 0 10px;
   }
@@ -713,9 +728,14 @@ body {
   /*/ Small Screen Skills Section /*/
   #skills-grid {
     grid-template-columns: 1fr;
+    grid-template-areas:
+    "box1"
+    "list1"
+    "box2"
+    "list2";
   }
 
-  #skills-box {
+  .skills-box {
     margin: 0;
   }
 
@@ -785,12 +805,12 @@ body {
   }
 
   /*/ Mobiles Skills section /*/
-  #skills-box {
+
+  .skills-box {
     font-size: 1rem;
     width: 100%;
     max-width: 80%;
-    margin: auto;
-    margin-top: 180px;;
+    margin-top: 180px;
   }
 
   #skills h3 {
