@@ -367,7 +367,10 @@ body {
     max-width: 30rem;
     margin: 4rem auto;
     padding-left: 30px;
-    padding-bottom: 35px;
+    padding-bottom: 50px;;
+  }
+  .skills-box p {
+    font-size: 1rem;
   }
   #box-1 {
     grid-area: box1;
