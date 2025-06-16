@@ -313,7 +313,7 @@ body {
   }
   
   /* About Section */
-  #about-section {
+  #about {
     padding-top: 125px;
   }
 
@@ -553,7 +553,7 @@ body {
 
   
   /* Contact Section */
-  #contact-section {
+  #contact {
     padding-bottom: 160px;
   }
   
@@ -735,7 +735,7 @@ body {
 
 
   /*/ Small Screen Contact Section /*/
-   #contact-section {
+   #contact {
     padding-bottom: 120px;
   }
 
