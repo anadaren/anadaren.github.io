@@ -169,7 +169,7 @@ body {
     text-align: center;
     padding: 17px 19px;
     text-decoration: none;
-    font-size: 17px;
+    font-size: 1.06em;
   }
   
   /* Page Link Hover */
@@ -263,17 +263,20 @@ body {
   }
 
   #name-section h1 {
-    font-size: 2.75em;
+    font-size: 3em;
   }
 
   #name-box  {
     display: flex;
-    max-width: 30rem;
-    margin-top: 180px;
+    max-width: 35rem;
+    margin-top: 170px;
     margin-left: 7%;
     margin-bottom: 0em;
-    padding-left: 30px;
-    padding-bottom: 35px;
+    padding: 20px 20px 35px 40px;
+  }
+
+  #name-box p {
+    font-size: 1.25rem;
   }
 
   header {
@@ -283,7 +286,13 @@ body {
   .button-style {
     background: var(--button-color);
     padding: 12px;
-    border-radius: 15px;
+    border-radius: 18px;
+  }
+  .big-button {
+    font-size: 1.25rem;
+    padding: 18px;
+    border-radius: 25px;
+    font-weight: 600;
   }
   .button-style:hover {
     background: var(--link-color);
@@ -314,7 +323,7 @@ body {
   
   /* About Section */
   #about {
-    padding-top: 125px;
+    padding-top: 150px;
   }
 
   #about-container {
@@ -488,12 +497,12 @@ body {
     outline: 1px solid var(--border-color);
     position: relative;
     height: auto;
-    min-height: 30rem;
-    max-width: 21rem;
+    min-height: 32rem;
+    max-width: 23rem;
     border-radius: 15px;
     margin-top: 0px;
     margin-bottom: 20px;
-    padding: 8px;
+    padding: 15px;
     text-align: center;
     
     z-index: 1;
@@ -505,32 +514,32 @@ body {
   
   .project-box:hover {
     box-shadow: 8px 8px 0px 0 var(--link-color);
-    animation: hoverAnim .2s forwards;
+    animation: hoverAnim .1s forwards;
     transition: .1s ease;
   }
   
   .project-box img {
     max-width: 100%;
-    min-height: 14rem;
+    min-height: 12rem;
     border-radius: 15px;
   }
   
   .project-box h2 {
     margin: 8px;
-    font-size: 1.4rem;
+    font-size: 1.5rem;
   }
   
   .project-box p {
     font-size: .9rem;
-    /*max-height: 75px;*/
-    overflow-y: scroll;
+    margin-bottom: 60px;
   }
 
   .proj-buttons {
     position: absolute;
-    font-size: .85rem;
+    font-size: 1rem;
     bottom: 25px;
     width: 95%;
+
   }
 
 
