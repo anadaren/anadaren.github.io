@@ -16,6 +16,8 @@
   },
   "dependencies": {
     "gsap": "^3.12.5",
+    "react": "^19.1.1",
+    "react-dom": "^19.1.1",
     "typed.js": "^2.1.0"
   }
 }

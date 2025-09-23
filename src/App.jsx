@@ -1,16 +1,19 @@
-/* Typed Text Animation */
+import React, { useState, useEffect } from 'react';
+import '/Users/anagreen/Desktop/code/anadaren.github.io/src/css/style.css';
 
-var typed = new Typed('#typed-text', {
-  strings: ['games', 'web apps', 'XR projects', 'art and animation'],
-  typeSpeed: 50,
-  loop: true,
-  backSpeed: 75,
-  backDelay: 1200,
-});
+import { Navbar } from './components/navbar.jsx';
+import { Top } from './components/top.jsx';
+import { About } from './components/about.jsx';
+import { Skills } from './components/skills.jsx';
+import { Footer } from './components/footer.jsx';
+import { Projects } from './components/projects.jsx';
+import { Contact } from './components/contact.jsx';
+
 
 /* Scroll Animations */
 
 const observer = new IntersectionObserver((entries) => {
+  useEffect(() => {
   entries.forEach((entry) => {
     // Checks if element is currently visible on screen
     if(entry.isIntersecting) {    // Adds class 'show' when element is visible
@@ -19,6 +22,7 @@ const observer = new IntersectionObserver((entries) => {
       entry.target.classList.remove('show');
     }
   })
+  }, []);
 });
 
 // Hides hidden elements before they are scrolled to
@@ -33,6 +37,9 @@ window.addEventListener('scroll', () => {
 
 
 /* Project Tabs */
+/*
+
+
 const selectTab = (el) => {
   var x = document.getElementsByClassName("tab-button");
   for (var i = 0; i < x.length; i++) {
@@ -50,20 +57,37 @@ const openTab = (tabName) => {
   for (var i = 0; i < y.length; i++) {
     y[i].style.display = "block";
   }
-}
+}*/
 
 
-/* Cursor Glow */
-const cursor = document.getElementById("cursor");
 
-document.body.onpointermove = event => {
+export const App = () =>{
 
-  const { clientX, clientY } = event;
+  /* Cursor Glow */
+  const cursor = document.getElementById("cursor");
 
-  cursor.animate({
-    left: `${clientX}px`,
-    top: `${clientY}px`
-}, { duration: 100, fill: "forwards" });  // Reduce to 100ms
+  document.body.onpointermove = event => {
 
+    const { clientX, clientY } = event;
 
+    cursor.animate({
+      left: `${clientX}px`,
+      top: `${clientY}px`
+  }, { duration: 100, fill: "forwards" });  // Reduce to 100ms
+
+  }
+
+  return (
+    <>
+    <Navbar />
+    <Top />
+    <About />
+    <Skills />
+    <div className='container'>
+        <Projects />
+      </div>
+      <Contact />
+    <Footer />
+    </>
+  );
 }
