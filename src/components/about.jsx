@@ -14,8 +14,10 @@ export const About = () => {
             <p>Hi, I'm Ana! I'm a software developer and game designer based in Brooklyn, 
               New York, with a passion for blending creativity and technology. I thrive at 
               the intersection of design and code, crafting immersive digital experiences 
-              and interactive worlds that captivate and engage. Whether it's solving complex 
-              technical puzzles or designing seamless user interactions, I'm passionate 
+              and interactive worlds that captivate and engage.</p>
+              
+              <p>Whether it's solving complex 
+              technical puzzles or designing seamless user interactions, I'm always passionate 
               about bringing ideas to life through thoughtful design and clean, functional 
               development.</p>
               

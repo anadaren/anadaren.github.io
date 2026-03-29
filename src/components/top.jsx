@@ -23,7 +23,7 @@ export const Top = () => {
 
     return (
         <>
-    <section id="name-section">
+    <section id="hero-section">
         <div className="section-box" id="name-box">
             <header>
             <h1>Hi, I'm Ana! 🚀</h1>
@@ -34,10 +34,12 @@ export const Top = () => {
             </header> 
         </div>
 
-    </section>
+    
        <div className="chevron">
             <a href="#about" className="chev-link"></a>
         </div>
+
+    </section>
 
     </>
     );

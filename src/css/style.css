@@ -88,7 +88,7 @@ body {
     display: grid;
     align-content: center;
     min-height: 50vh;
-    padding: 100px 0 100px 0;
+    padding: 100px 0;
   }
 
   #cursor {
@@ -261,26 +261,25 @@ body {
   /*/ End of Navigation Bar /*/
   
   
-  /* Top Section */
-  #name-section {
-    padding-top: 0px;
+  /* Hero Section */
+  #hero-section {
+    min-height: 100vh;
+    padding: 0px;
+    justify-content: center;
   }
 
-  #name-section h1 {
-    font-size: 3em;
+  #hero-section h1 {
+    font-size: 2.9rem;
   }
 
   #name-box  {
-    display: flex;
     max-width: 35rem;
-    margin-top: 170px;
-    margin-left: 7%;
-    margin-bottom: 0em;
-    padding: 20px 20px 35px 40px;
+    /*margin-left: 7%;*/
+    padding: 20px 35px 35px 40px;
   }
 
   #name-box p {
-    font-size: 1.25rem;
+    font-size: 1.35rem;
   }
 
   header {
@@ -295,8 +294,9 @@ body {
   .big-button {
     font-size: 1.25rem;
     padding: 18px;
-    border-radius: 25px;
+    border-radius: 20px;
     font-weight: 600;
+    transition: all 0.3s;
   }
   .button-style:hover {
     background: var(--link-color);
@@ -310,12 +310,13 @@ body {
     width: 40px;
     opacity: 75%;
     margin-left: 48%;
+    position: absolute;
+    bottom: 3rem;
     
     -webkit-filter: invert(1);
     filter: invert(1);
     animation: moveUpDown 1s linear infinite;
     animation-duration: 1.2s;
-    margin-bottom: 100px;
   }
 
   a.chev-link {
@@ -506,7 +507,7 @@ body {
     position: relative;
     height: auto;
     min-height: 32rem;
-    max-width: 23rem;
+    max-width: 25rem;
     border-radius: 15px;
     margin-top: 0px;
     margin-bottom: 20px;
@@ -561,7 +562,7 @@ body {
     background: var(--button-color);
     color: var(--color-light);
     border-radius: 15px;
-    font-size: .75rem;
+    font-size: .8rem;
     margin-bottom: 15px;
     padding: 2px 10px 2px 10px;
   }
@@ -723,12 +724,9 @@ body {
 
 /*/ Small Screen View 2 /*/
 @media only screen and (max-width: 850px) {
-  /*/ Small Screen Top Section /*/
+  /*/ Small Screen Hero Section /*/
   #name {
     place-items: center;
-  }
-  #name-box {
-    margin-left: 0;
   }
   
   
@@ -782,13 +780,11 @@ body {
     display: inline;
   }
 
-  /*/ Mobile Top Section /*/
+  /*/ Mobile Hero Section /*/
   #name-box {
     font-size: 1rem;
-    width: 100%;
-    max-width: 80%;
+    max-width: 75%;
     margin: auto;
-    margin-top: 180px;
   }
 
   #name h1 {

@@ -11,8 +11,12 @@ export const Project = (props) => {
             </div>
 
             <div className="proj-buttons">
-                <a href={props.sourceLink} className="button-style" target="_blank">Source Code</a>
-                <a href={props.liveLink} className="button-style" target="_blank">Live Demo</a>
+                {props.sourceLink ? (
+                    <a href={props.sourceLink} className="button-style" target="_blank">Source Code</a>
+                )   : (null)}
+                {props.liveLink ? (
+                    <a href={props.liveLink} className="button-style" target="_blank">Live Demo</a>
+                )   : (null)}
             </div>
 
         </div>
