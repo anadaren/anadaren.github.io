@@ -79,8 +79,8 @@ const projectsData = [
         tags: "Unity, C#, Virtual Reality, Meta Quest 2, Git, Blender",
         description: "An interactive VR Art Game, focusing on the absurdism of working an office job in the modern world.",
         imgSrc: "/images/projectPics/games/SomethingsComing.png",
-        sourceLink: "/src/somethingscoming.html",
-        liveLink: "",
+        sourceLink: "",
+        liveLink: "https://anadaren.itch.io/somethings-coming",
         type: "gamedev xr"
     },
     {
@@ -88,8 +88,8 @@ const projectsData = [
         tags: "Unity, C#, Blender, Procreate",
         description: "A project where I created 6 short game prototypes over the course of six weeks. Each one is also a different genre and style of game.",
         imgSrc: "/images/projectPics/games/GamePrototypes.png",
-        sourceLink: "/src/weeklygames.html",
-        liveLink: "",
+        sourceLink: "",
+        liveLink: "https://anadaren.itch.io/",
         type: "gamedev"
     },
     {
@@ -97,8 +97,8 @@ const projectsData = [
         tags: "Unity, C#, Virtual Reality, Meta Quest 2, Git, Blender",
         description: "My Interactive Multimedia Senior Thesis! Explore your family's old abandoned Lake House and solve puzzles.",
         imgSrc: "/images/projectPics/games/LakeHouse.png",
-        sourceLink: "/src/thelakehouse.html",
-        liveLink: "",
+        sourceLink: "",
+        liveLink: "https://anadaren.itch.io/the-lake-house",
         type: "gamedev xr"
     },
         {
@@ -133,7 +133,7 @@ const projectsData = [
         tags: "Augmented Reality, Illustrator, BlippAR, Physical Media",
         description: "A 12 x 12 laser-cut wooden shadowbox, depicting an augmented reality underwater shipwreck scene, designed in Illustrator.",
         imgSrc: "/images/projectPics/ShadowBox.jpg",
-        sourceLink: "https://youtube.com/shorts/eFDyzjSCj6g?feature=share",
+        sourceLink: "",
         liveLink: "https://youtube.com/shorts/eFDyzjSCj6g?feature=share",
         type: "art xr"
     },
@@ -143,7 +143,7 @@ const projectsData = [
         description: "My Sketchfab account, showcasing all of my 3D artwork.",
         imgSrc: "/images/projectPics/sketchfab.png",
         sourceLink: "https://sketchfab.com/anadaren",
-        liveLink: "https://sketchfab.com/anadaren",
+        liveLink: "",
         type: "art"
     },
     
