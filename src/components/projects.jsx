@@ -3,6 +3,15 @@ import { Project } from './project.jsx';
 
 const projectsData = [
     {
+        title: "In Fluorescence",
+        tags: "Unity, C#, Git, JSON",
+        description: "A narrative driven rpg-lite game about making friends in a new city, and the importance of human connection.",
+        imgSrc: "/images/projectPics/games/influor.png",
+        sourceLink: "",
+        liveLink: "https://theowlgoddess.itch.io/in-fluorescence",
+        type: "gamedev"
+    },
+    {
         title: "Bookshelf",
         tags: "HTML/CSS, JavaScript, React",
         description: "Searches the Google Book API for books for you to add to a custom read and favorite lists.",
