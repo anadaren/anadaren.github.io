@@ -71,8 +71,6 @@ body {
 }
 
 
-
-
   h1 {
     font-size: 2em;
     line-height: 1.1;
@@ -138,7 +136,7 @@ body {
     background: var(--color-medium);
     position: fixed;
     top: 0;
-    height: 60px;
+    height: 58px;
     width: 100%;
     overflow: hidden;
     z-index: 2;
@@ -269,33 +267,47 @@ body {
     justify-content: center;
   }
 
+  #hero-flexbox {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: 50px;
+  }
+
+  #hero-image img {
+    outline: 5px solid var(--color-light);
+    border-radius: 50%;
+    max-width: 24rem;
+  }
+
   #hero-section h1 {
-    font-size: 2.9rem;
+    font-size: 2.5rem;
   }
 
   #name-box  {
     max-width: 35rem;
     /*margin-left: 7%;*/
-    padding: 20px 35px 35px 40px;
+    padding: 20px 30px 30px 30px;
   }
 
   #name-box p {
-    font-size: 1.35rem;
+    font-size: 1.25rem;
   }
 
   header {
-    margin-bottom: 1.5rem;
+    margin-bottom: 1.25rem;
   }
   
   .button-style {
     background: var(--button-color);
     padding: 12px;
-    border-radius: 18px;
+    border-radius: 10px;
   }
   .big-button {
-    font-size: 1.25rem;
+    font-size: 1.2rem;
     padding: 18px;
-    border-radius: 20px;
+    border-radius: 10px;
     font-weight: 600;
     transition: all 0.3s;
   }
@@ -372,7 +384,8 @@ body {
     grid-template-areas:
     "box1 list1"
     "list2 box2";
-    margin: 0 10%;
+    margin: 0 25%;
+    gap: 50px;
   }
 
   .skills-box  {
@@ -494,11 +507,10 @@ body {
   .grid-container#projects {
     grid-template-columns: repeat(3, 1fr);
     margin: 0px auto 0px auto;
+    justify-content: center;
     justify-items: center;
-    align-items: center;
-    gap: 50px;
+    gap: 75px 0px;
     width: 100%;
-    max-width: 80%;
   }
   
   
@@ -510,8 +522,6 @@ body {
     min-height: 32rem;
     max-width: 25rem;
     border-radius: 15px;
-    margin-top: 0px;
-    margin-bottom: 20px;
     padding: 15px;
     text-align: center;
     
@@ -541,17 +551,33 @@ body {
   }
   
   .project-box p {
-    font-size: .9rem;
+    font-size: 1.1rem;
     margin-bottom: 60px;
   }
 
   .proj-buttons {
     position: absolute;
     font-size: 1rem;
-    bottom: 25px;
+    bottom: 10px;
     width: 95%;
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    gap: 10px;
   }
 
+  .proj-buttons img {
+    width: 40px;
+    min-height: 40px;
+    -webkit-filter: invert(1);
+    filter: invert(75%);
+  }
+
+  .proj-buttons img:hover {
+    -webkit-filter: invert(0);
+    filter: invert(1);
+    transition: all 0.3s;
+  }
 
   .project-specs {
     margin: 2rem 0;
@@ -562,8 +588,8 @@ body {
     width: auto;
     background: var(--button-color);
     color: var(--color-light);
-    border-radius: 15px;
-    font-size: .8rem;
+    border-radius: 10px;
+    font-size: .9rem;
     margin-bottom: 15px;
     padding: 2px 10px 2px 10px;
   }
@@ -616,7 +642,7 @@ body {
     padding: 0px;
     width: 100%;
     background-color: var(--color-medium);
-    height: 75px;
+    height: 60px;
     max-width: 100%;
     z-index: 2;
 }
@@ -625,12 +651,12 @@ body {
     float: left;
     font-family: "Lucida Console", monospace;
     margin: 25px 0px 0px 75px;
-    font-size: 15px;
+    font-size: 13px;
 }
   
 #page-footer ul {
     list-style-type: none;
-    margin: 15px 75px 0px 0px;
+    margin: 10px 75px 0px 0px;
     padding: 0;
 }
 #page-footer li {

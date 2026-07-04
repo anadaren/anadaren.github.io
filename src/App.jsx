@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import '/Users/anagreen/Desktop/code/anadaren.github.io/src/css/style.css';
+import '/src/css/style.css';
 
 import { Navbar } from './components/navbar.jsx';
 import { Top } from './components/top.jsx';

@@ -24,17 +24,20 @@ export const Top = () => {
     return (
         <>
     <section id="hero-section">
-        <div className="section-box" id="name-box">
-            <header>
-            <h1>Hi, I'm Ana! 🚀</h1>
-            <p>Designer & Developer & Fun Stuff Enthusiast</p>
-            <p>I make <span ref={typedEl}></span></p>
-            <br/>
-            <a href="mailto:ana.daren.green@gmail.com" class="button-style big-button">✉️ Say hi!</a>
-            </header> 
+        <div id="hero-flexbox">
+        <div id="hero-image">
+            <img src="/images/hero.png" alt="Hero Image"/></div>
+            <div className="section-box" id="name-box">
+                <header>
+                <h1>Hi, I'm Ana! 🚀</h1>
+                <p>Designer & Developer & Fun Stuff Enthusiast</p>
+                <p>I make <span ref={typedEl}></span></p>
+                <br/>
+                <a href="mailto:ana.daren.green@gmail.com" class="button-style big-button">✉️ Say hi!</a>
+                </header> 
+            </div>
         </div>
 
-    
        <div className="chevron">
             <a href="#about" className="chev-link"></a>
         </div>
