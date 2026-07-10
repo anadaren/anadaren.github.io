@@ -25,8 +25,8 @@ export const Top = () => {
         <>
     <section id="hero-section">
         <div id="hero-flexbox">
-        <div id="hero-image">
-            <img src="/images/hero.png" alt="Hero Image"/></div>
+           
+            <img src="/images/hero.png" id="hero-img"/>
             <div className="section-box" id="name-box">
                 <header>
                 <h1>Hi, I'm Ana! 🚀</h1>

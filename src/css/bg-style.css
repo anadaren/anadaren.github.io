@@ -1,4 +1,35 @@
-/*/ Generate Star Background /*/
+/*/ CSS for Star Background /*/
+
+/*
+#stars-small,
+#stars-medium,
+#stars-large {
+  position: fixed;
+  inset: 0;
+
+  pointer-events: none;
+  z-index: -1;
+  overflow: hidden;
+}
+.star {
+  position: absolute;
+  background: white;
+  border-radius: 50%;
+}
+
+#stars-small {
+  animation: animStar 50s linear infinite;
+}
+
+#stars-medium {
+  animation: animStar 100s linear infinite;
+}
+
+#stars-large {
+  animation: animStar 150s linear infinite;
+}*/
+
+
 #stars {
   position: fixed;
   width: 1px;

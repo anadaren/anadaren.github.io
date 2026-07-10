@@ -4,7 +4,7 @@
 /*/ Generate Star Background /*/
 
 // Function to generate multiple box shadows
-@function multiple-box-shadow($n) {
+/*@function multiple-box-shadow($n) {
   $value: "#{math.random(2000)}px #{math.random(2000)}px #FFF";
   @for $i from 2 through $n {
     $value: "#{$value}, #{math.random(2000)}px #{math.random(2000)}px #FFF";
@@ -75,7 +75,7 @@ $shadows-big: multiple-box-shadow(100);
     box-shadow: $shadows-big;
   }
 }
-
+*/
 @keyframes animStar {
   from {
     transform: translateY(0px);

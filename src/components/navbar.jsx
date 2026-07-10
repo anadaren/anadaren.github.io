@@ -1,6 +1,11 @@
-import React from 'react';
+import React, {useState } from 'react';
 
 export const Navbar = () => {
+    const [menuActive, setMenuActive] = useState(false);
+
+    const toggleMenu = () => {
+        setMenuActive(!menuActive);
+    }
 
     return (
       <nav>   
@@ -16,18 +21,18 @@ export const Navbar = () => {
       
       
 
-      <div id="ham">
+      <div id="ham" className={menuActive ? "active" : ""} onClick={toggleMenu}>
         <span></span>
         <span></span>
         <span></span>
       </div>
     
 
-      <div className="off-screen-menu">
+      <div className={`off-screen-menu ${menuActive ? "active" : ""}`}>
           <ul>
-            <li><a href="../index.html#about" class="hamlink">About</a></li>
-            <li><a href="../index.html#projects" class="hamlink">Projects</a></li>
-            <li><a href="../index.html#contact" class="hamlink">Contact</a></li>
+            <li><a href="../index.html#about" className="hamlink" onClick={toggleMenu}>About</a></li>
+            <li><a href="../index.html#projects" className="hamlink" onClick={toggleMenu}>Projects</a></li>
+            <li><a href="../index.html#contact" className="hamlink" onClick={toggleMenu}>Contact</a></li>
           </ul>
       </div>
 
