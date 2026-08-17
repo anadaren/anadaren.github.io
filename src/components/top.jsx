@@ -33,7 +33,7 @@ export const Top = () => {
                 <p>Designer & Developer & Fun Stuff Enthusiast</p>
                 <p>I make <span ref={typedEl}></span></p>
                 <br/>
-                <a href="mailto:ana.daren.green@gmail.com" class="button-style big-button">✉️ Say hi!</a>
+                <a href="mailto:ana.daren.green@gmail.com" className="button-style big-button">✉️ Say hi!</a>
                 </header> 
             </div>
         </div>

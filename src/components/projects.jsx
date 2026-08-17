@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Project } from './project.jsx';
 
 const projectsData = [
@@ -165,11 +165,44 @@ const projectsData = [
         type: "art"
     },
     
-]
+];
 
 
 export const Projects = () => {
    const [activeTab, setActiveTab] = useState("webdev"); // default tab
+   const [displayedTab, setDisplayedTab] = useState("webdev"); // currently displayed tab
+   const [visibleProjects, setVisibleProjects] = useState([]); // state for currently visible projects
+
+   useEffect(() => {
+        // Make the currently displayed cards fade out
+        setVisibleProjects([]);
+
+        const fadeOutTimer = setTimeout(() => {
+
+            setDisplayedTab(activeTab);
+
+            const renderTimer = setTimeout(() => {
+
+                const newProjects = projectsData.filter(project =>
+                    activeTab === "all"
+                        ? true
+                        : project.type.includes(activeTab)
+                );
+
+                newProjects.forEach((_, index) => {
+                    setTimeout(() => {
+                        setVisibleProjects(prev => [...prev, index]);
+                    }, 150 + index * 100);
+                });
+
+            }, 50);
+
+            return () => clearTimeout(renderTimer);
+
+        }, 400);
+
+        return () => clearTimeout(fadeOutTimer);
+    }, [activeTab]);
     
     return (
     <section id="projects">
@@ -212,7 +245,7 @@ export const Projects = () => {
 
         <div className="grid-container" id="projects">
             {projectsData
-            .filter(project => activeTab === "all" ? true : project.type.includes(activeTab))
+            .filter(project => displayedTab === "all" ? true : project.type.includes(displayedTab))
             .map((project, index) => {
                 return (
                 <Project
@@ -223,6 +256,7 @@ export const Projects = () => {
                     imgSrc={project.imgSrc}
                     sourceLink={project.sourceLink}
                     liveLink={project.liveLink}
+                    className={visibleProjects.includes(index) ? "project-visible" : ""}
                 />
                 );
             })}

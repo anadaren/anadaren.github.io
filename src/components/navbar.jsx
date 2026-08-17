@@ -15,9 +15,9 @@ export const Navbar = () => {
       <a href="../index.html"><p>Anastasia D. Green</p></a>
       
 
-      <a href="../#contact" class="navlink">Contact</a>
-      <a href="../#projects" class="navlink">Projects</a>
-      <a href="../#about" class="navlink">About</a>
+      <a href="../#contact" className="navlink">Contact</a>
+      <a href="../#projects" className="navlink">Projects</a>
+      <a href="../#about" className="navlink">About</a>
       
       
 

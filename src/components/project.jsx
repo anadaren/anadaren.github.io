@@ -2,7 +2,7 @@ import React from 'react';
 
 export const Project = (props) => {
     return (
-        <div className="project-box webdev">
+        <div className={`project-box ${props.className || ""}`} style={props.style}>
             <div className="proj-content">
                 <img src={props.imgSrc}/>
                 <h2>{props.title}</h2>
