@@ -3,6 +3,15 @@ import { Project } from './project.jsx';
 
 const projectsData = [
     {
+        title: "Typescript Solitaire",
+        tags: "HTML/CSS, Typescript, React",
+        description: "A simple solitaire game made with React and Typescript.",
+        imgSrc: "/images/projectPics/solitaire.png",
+        sourceLink: "https://github.com/anadaren/Typescript-Solitaire",
+        liveLink: "https://anadaren-solitaire.netlify.app/",
+        type: "webdev"
+    },
+    {
         title: "In Fluorescence",
         tags: "Unity, C#, Git, JSON",
         description: "A narrative driven rpg-lite game about making friends in a new city, and the importance of human connection.",
@@ -74,7 +83,7 @@ const projectsData = [
         liveLink: "https://anadaren-storefront.netlify.app/",
         type: "webdev"
     },
-    {
+    /*{
         title: "Current Affairs",
         tags: "HTML/CSS, Node.js, Express.js, MongoDB",
         description: "A fullstack satirical fish themed blogging website for people to post about fish and fish related topics.",
@@ -82,7 +91,7 @@ const projectsData = [
         sourceLink: "https://github.com/anadaren/fish-blog/",
         liveLink: "https://fish-blog.onrender.com/",
         type: "webdev"
-    },
+    },*/
     {
         title: "Something's Coming",
         tags: "Unity, C#, Virtual Reality, Meta Quest 2, Git, Blender",

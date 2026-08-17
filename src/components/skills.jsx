@@ -12,6 +12,7 @@ const skillsData = {
       "css3-plain-wordmark",
       "javascript-plain",
       "react-original-wordmark",
+      "typescript-plain",
       "azuresqldatabase-plain",
       "sass-original",
       "nodejs-plain-wordmark",
