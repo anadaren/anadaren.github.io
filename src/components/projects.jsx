@@ -203,6 +203,16 @@ export const Projects = () => {
 
         return () => clearTimeout(fadeOutTimer);
     }, [activeTab]);
+
+    /*
+    Timing:
+    400ms  → old cards fade out
+    50ms   → new cards render
+    150ms  → first new card starts
+    250ms  → second
+    350ms  → third
+    450ms  → fourth
+    */
     
     return (
     <section id="projects">

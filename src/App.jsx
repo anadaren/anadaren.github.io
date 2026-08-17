@@ -35,32 +35,6 @@ window.addEventListener('scroll', () => {
 }, false);
 
 
-
-/* Project Tabs */
-/*
-
-
-const selectTab = (el) => {
-  var x = document.getElementsByClassName("tab-button");
-  for (var i = 0; i < x.length; i++) {
-    x[i].classList.remove("tab-selected");
-  }
-  el.classList.add("tab-selected");
-}
-
-const openTab = (tabName) => {
-  var x = document.getElementsByClassName("project-box");
-  for (var i = 0; i < x.length; i++) {
-    x[i].style.display = "none";
-  }
-  var y = document.getElementsByClassName(tabName);
-  for (var i = 0; i < y.length; i++) {
-    y[i].style.display = "block";
-  }
-}*/
-
-
-
 export const App = () =>{
 
   /* Cursor Glow */
